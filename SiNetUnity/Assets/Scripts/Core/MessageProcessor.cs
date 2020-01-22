@@ -32,10 +32,10 @@ namespace SiNet {
                 if (entity.authorityType != SyncGameObject.AuthorityType.local)
                 {
                     entity.SyncToSnapshot(syncGOSnapshot);
-                    Debug.Log("[Message Stack] - recve remove sync state");
+                    Debug.Log("[Message Stack] - recv remote sync state");
                 }
                 else {
-                    Debug.Log("[Message Stack] - recve local's state");
+                    Debug.Log("[Message Stack] - recv local's state");
                 }
             }
 			catch {

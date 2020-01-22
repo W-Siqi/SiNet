@@ -1,33 +1,4 @@
-# =============== #
-# Unity generated #
-# =============== #
-/SiNetUnity/Temp/
-/SiNetUnity/Builds
-/SiNetUnity/Library/
-/SiNetUnity/sysinfo.txt
-*.stackdump
-/SiNetUnity/Assets/AssetStoreTools*
-*.apk
-*.unitypackage
- 
-# ===================================== #
-# Visual Studio / MonoDevelop generated #
-# ===================================== #
-[Ee]xported[Oo]bj/
-.vs/
-/SiNetUnity/*.userprefs
-/SiNetUnity/*.csproj
-/SiNetUnity/*.pidb
-/SiNetUnity*.pidb.meta
-/SiNetUnity/*.suo
-/SiNetUnity/*.sln*
-/SiNetUnity/*.user
-/SiNetUnity/*.unityproj
-/SiNetUnity/*.booproj
-.consulo/
-/SiNetUnity/*.tmp
-/SiNetUnity/*.svd
- 
+
 # ============ #
 # OS generated #
 # ============ #
@@ -41,4 +12,4 @@ ehthumbs.db
 [Dd]esktop.ini
 Corridor/Library/ShaderCache/
 Corridor/Library/metadata/
-@nikhilsinha
+

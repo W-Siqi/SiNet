@@ -70,9 +70,16 @@ namespace SiNet {
             else
                 DestroyImmediate(this);
 
-            localAuthorityGroup = FindObjectsOfType<SyncGameObject>().OfType<SyncGameObject>().ToList();
+            localAuthorityGroup = new List<SyncGameObject>();
             remoteAuthorityGroup = new List<SyncGameObject>();
             serverAuthorityGroup = new List<SyncGameObject>();
+
+            foreach (var entity in FindObjectsOfType<SyncGameObject>()) {
+                if (entity.authorityType == SyncGameObject.AuthorityType.local)
+                    localAuthorityGroup.Add(entity);
+                else if (entity.authorityType == SyncGameObject.AuthorityType.remote)
+                    localAuthorityGroup.Add(entity);
+            }
         }
     }
 }
