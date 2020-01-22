@@ -1,0 +1,7 @@
+{
+    "name": "ahn-vrcaring-backend",
+    "version": "1.0.0",
+    "dependencies": {
+        "ip": "1.1.5"
+    }
+}
