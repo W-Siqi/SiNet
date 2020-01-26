@@ -12,9 +12,9 @@ namespace SiNet{
 
         public override void InitFromOriginalObejct(System.Object src)
         {
-            if (src is SyncGOSnapshot)
+            if (src is SyncEntitySnapshot)
             {
-                var syncGO = src as SyncGOSnapshot;
+                var syncGO = src as SyncEntitySnapshot;
 
                 this.sceneUID = syncGO.sceneUID;
                 this.mirrorObjectID = syncGO.mirrorObjectID;
@@ -31,11 +31,11 @@ namespace SiNet{
 
         public override System.Object ToOriginalObject()
         {
-            var snapShot = new SyncGOSnapshot();
+            var snapShot = new SyncEntitySnapshot();
             snapShot.sceneUID = sceneUID;
             snapShot.mirrorObjectID = mirrorObjectID;
 
-            var syncStates = new List<SyncStateSnapshot>();
+            var syncStates = new List<SyncComponentSnapshot>();
             foreach (var encodedState in encodedMembers) {
                 try {
                     var memeberWraper = JsonUtility.FromJson<MemberWrapper>(encodedState);
@@ -43,7 +43,7 @@ namespace SiNet{
                     if (memeberWraper.type != "SyncStateSnapshot")
                         throw new System.Exception("bad json");
 
-                    syncStates.Add(JsonUtility.FromJson<SyncStateSnapshot>(memeberWraper.json));
+                    syncStates.Add(JsonUtility.FromJson<SyncComponentSnapshot>(memeberWraper.json));
                 }
                 catch {
                     throw;

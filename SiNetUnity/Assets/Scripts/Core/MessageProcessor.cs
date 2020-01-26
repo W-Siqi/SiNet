@@ -18,20 +18,20 @@ namespace SiNet {
 		private static void ProcessSyncMessage(Message message) {
             try
             {
-                var syncGOSnapshot = JsonUtility.FromJson<TransmitableSyncGOSnapshot>(message.body).ToOriginalObject() as SyncGOSnapshot;
-                Debug.Log("[Message Stack] - sync messsage :" + syncGOSnapshot.sceneUID);
+                var syncEntitySnapshot = JsonUtility.FromJson<TransmitableSyncGOSnapshot>(message.body).ToOriginalObject() as SyncEntitySnapshot;
+                Debug.Log("[Message Stack] - sync messsage :" + syncEntitySnapshot.sceneUID);
 
                 // if entity cannot find, then instantiate it
-                var entity = EntityManager.instance.FindEntity(syncGOSnapshot.sceneUID);
+                var entity = EntityManager.instance.FindEntity(syncEntitySnapshot.sceneUID);
                 if (entity == null)
-                    entity = EntityManager.instance.InstantiateEntity(syncGOSnapshot.mirrorObjectID,syncGOSnapshot.sceneUID);
+                    entity = EntityManager.instance.InstantiateEntity(syncEntitySnapshot.mirrorObjectID, syncEntitySnapshot.sceneUID);
                 if (entity == null) 
                     return;
 
                 // sync or not depend on its authroity 
-                if (entity.authorityType != SyncGameObject.AuthorityType.local)
+                if (entity.authorityType != SyncEntity.AuthorityType.local)
                 {
-                    entity.SyncToSnapshot(syncGOSnapshot);
+                    entity.SyncToSnapshot(syncEntitySnapshot);
                     Debug.Log("[Message Stack] - recv remote sync state");
                 }
                 else {

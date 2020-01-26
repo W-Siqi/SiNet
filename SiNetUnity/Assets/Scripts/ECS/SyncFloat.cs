@@ -4,19 +4,19 @@ using UnityEngine;
 
 namespace SiNet
 {
-    public class SyncFloat : SyncState
+    public class SyncFloat : SyncComponent
     {
         public float val = 0;
 
-        public override SyncStateSnapshot GetSnapshot()
+        public override SyncComponentSnapshot GetSnapshot()
         {
-            var snapshot = new SyncStateSnapshot();
+            var snapshot = new SyncComponentSnapshot();
             snapshot.innerID = innerID;
             snapshot.values = new float[] { val };
             return snapshot;
         }
 
-        public override void SyncToSnapshot(SyncStateSnapshot snapshot)
+        public override void SyncToSnapshot(SyncComponentSnapshot snapshot)
         {
             if (snapshot.values.Length != 1) {
                 Debug.Log("[Bad message]-state error");

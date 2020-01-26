@@ -7,7 +7,7 @@ namespace SiNet {
     // so its frame wouln't be ready after the first frame
 
     // TBD: use hash map to store the sync States
-    public class SyncGameObject : MonoBehaviour
+    public class SyncEntity : MonoBehaviour
     {
         public enum AuthorityType {
             local,remote,server
@@ -16,33 +16,33 @@ namespace SiNet {
         public AuthorityType authorityType = AuthorityType.local;
         public int sceneUID = -1;
         public int mirrorObjectID = -1;
-        public SyncState[] syncStates;
+        public SyncComponent[] syncStates;
 
         // Start is called before the first frame update
         void Start()
         {
-            syncStates = GetComponentsInChildren<SyncState>();
+            syncStates = GetComponentsInChildren<SyncComponent>();
             int id = 1;
             foreach (var s in syncStates) {
                 s.innerID = id++;
             }
         }
 
-        public SyncGOSnapshot GetSnapshot() {
-            var snapshot = new SyncGOSnapshot();
+        public SyncEntitySnapshot GetSnapshot() {
+            var snapshot = new SyncEntitySnapshot();
 
             snapshot.sceneUID = sceneUID;
             snapshot.mirrorObjectID = mirrorObjectID;
 
-            var stateSnapshots = new List<SyncStateSnapshot>();
+            var componentSnapshots = new List<SyncComponentSnapshot>();
             foreach (var state in syncStates)
-                stateSnapshots.Add(state.GetSnapshot());
-            snapshot.syncStates = stateSnapshots.ToArray();
+                componentSnapshots.Add(state.GetSnapshot());
+            snapshot.syncStates = componentSnapshots.ToArray();
 
             return snapshot;
         }
 
-        public void SyncToSnapshot(SyncGOSnapshot snapshot) {
+        public void SyncToSnapshot(SyncEntitySnapshot snapshot) {
             if (snapshot.sceneUID != sceneUID) {
                 Debug.LogWarning("[Sync Fail]");
                 return;

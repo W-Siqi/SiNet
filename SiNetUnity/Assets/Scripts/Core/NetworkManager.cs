@@ -90,8 +90,8 @@ namespace SiNet{
                 if (online)
                 {
                     var localObjects = entityManager.localAuthorityGroup;
-                    var assigned = new List<SyncGameObject>();
-                    var unassigned = new List<SyncGameObject>();
+                    var assigned = new List<SyncEntity>();
+                    var unassigned = new List<SyncEntity>();
 
                     foreach (var localObj in localObjects) {
                         if (localObj.sceneUID < 0)
@@ -108,7 +108,7 @@ namespace SiNet{
                         var body = transmitObj.Encode();
 
                         // Old version:
-                        //var body = MessageBodyProtocal.EncodeSyncGameObject(assginedObj);
+                        //var body = MessageBodyProtocal.EncodeSyncEntity(assginedObj);
 
                         var message = new Message(Message.Type.syncMessage, body);
 

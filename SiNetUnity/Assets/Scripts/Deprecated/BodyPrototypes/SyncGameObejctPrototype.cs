@@ -4,25 +4,25 @@ using UnityEngine;
 
 namespace SiNet {
     [System.Serializable]
-    public class SyncGameObjectPrototype:MessageBodyPrototype
+    public class SyncEntityPrototype:MessageBodyPrototype
     {   
         public string[] syncStateJSONs;
         public int sceneUID;
         public int mirrorObjectID = -1;
 
-        public SyncGameObjectPrototype(SyncGameObject syncGameObject)
+        public SyncEntityPrototype(SyncEntity syncEntity)
         {
             var jsonfiedStates = new List<string>();
-            foreach (var state in syncGameObject.syncStates) {
+            foreach (var state in syncEntity.syncStates) {
                 jsonfiedStates.Add(JsonUtility.ToJson(state));
             }
             this.syncStateJSONs = jsonfiedStates.ToArray();
 
-            this.sceneUID = syncGameObject.sceneUID;
-            this.mirrorObjectID = syncGameObject.mirrorObjectID;
+            this.sceneUID = syncEntity.sceneUID;
+            this.mirrorObjectID = syncEntity.mirrorObjectID;
         }
 
-        public SyncGameObjectPrototype() {
+        public SyncEntityPrototype() {
         }
 
         // unity's jsonUtility doesn't support serilzie array of object. so...
@@ -35,7 +35,7 @@ namespace SiNet {
         {
             try
             {
-                var decodeResult = JsonUtility.FromJson<SyncGameObjectPrototype>(body);
+                var decodeResult = JsonUtility.FromJson<SyncEntityPrototype>(body);
                 this.sceneUID = decodeResult.sceneUID;
                 this.mirrorObjectID = decodeResult.mirrorObjectID;
                 this.syncStateJSONs = decodeResult.syncStateJSONs;
@@ -47,17 +47,17 @@ namespace SiNet {
 
         public override Object ToOriginal()
         {
-            var original = new SyncGameObject();
+            var original = new SyncEntity();
 
             original.sceneUID = this.sceneUID;
 
             original.mirrorObjectID = this.mirrorObjectID;
 
-            var decodedStates = new List<SyncState>();
+            var decodedStates = new List<SyncComponent>();
             foreach (var jsonStr in syncStateJSONs) {
                 try
                 {
-                    var decoded = JsonUtility.FromJson<SyncState>(jsonStr);
+                    var decoded = JsonUtility.FromJson<SyncComponent>(jsonStr);
                     decodedStates.Add(decoded);
                 }
                 catch {

@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SiNet {
-    public class SyncTransform : SyncState
+    public class SyncTransform : SyncComponent
     {
         public Vector3 position;
         public Vector3 localScale;
         public Quaternion rotation;
 
-        private SyncGameObject attachedEntity = null;
+        private SyncEntity attachedEntity = null;
 
         private void Start()
         {
-            attachedEntity = GetComponent<SyncGameObject>();
+            attachedEntity = GetComponent<SyncEntity>();
        
         }
 
         // sync to the real transform if it under the local authority
         private void Update()
         {
-            if (attachedEntity.authorityType == SyncGameObject.AuthorityType.local) {
+            if (attachedEntity.authorityType == SyncEntity.AuthorityType.local) {
                 position = transform.position;
                 localScale = transform.localScale;
                 rotation = transform.rotation;
             }
         }
 
-        public override SyncStateSnapshot GetSnapshot()
+        public override SyncComponentSnapshot GetSnapshot()
         {
-            var snapshot = new SyncStateSnapshot();
+            var snapshot = new SyncComponentSnapshot();
             snapshot.innerID = innerID;
 
             // encode part
@@ -41,7 +41,7 @@ namespace SiNet {
             return snapshot;
         }
 
-        public override void SyncToSnapshot(SyncStateSnapshot snapshot)
+        public override void SyncToSnapshot(SyncComponentSnapshot snapshot)
         {
             if (snapshot.values.Length != 10)
             {

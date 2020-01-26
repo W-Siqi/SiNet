@@ -6,13 +6,13 @@ using UnityEngine;
 namespace SiNet {
     public class MessageBodyProtocal
     {
-        public static string EncodeSyncGameObject(SyncGameObject src) {
-            var syncBody = new SyncGameObjectPrototype(src);
+        public static string EncodeSyncEntity(SyncEntity src) {
+            var syncBody = new SyncEntityPrototype(src);
             return syncBody.Encode();
         }
 
-        public static SyncGameObjectPrototype DecodeSyncGameObject(string body) {
-            var prototype = new SyncGameObjectPrototype();
+        public static SyncEntityPrototype DecodeSyncEntity(string body) {
+            var prototype = new SyncEntityPrototype();
             try
             {
                 prototype.DecodeFrom(body);

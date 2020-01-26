@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SiNet {
-    public class SyncStateSnapshot
+    public class SyncComponentSnapshot
     {
         public int innerID;
         public float[] values;

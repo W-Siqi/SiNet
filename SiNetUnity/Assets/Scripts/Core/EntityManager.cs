@@ -18,11 +18,11 @@ namespace SiNet {
         private List<EntityPrefab> entityTable;
 
 
-        public List<SyncGameObject> remoteAuthorityGroup;
-        public List<SyncGameObject> serverAuthorityGroup;
-        public List<SyncGameObject> localAuthorityGroup;
+        public List<SyncEntity> remoteAuthorityGroup;
+        public List<SyncEntity> serverAuthorityGroup;
+        public List<SyncEntity> localAuthorityGroup;
 
-        public SyncGameObject FindEntity(int sceneUID) {
+        public SyncEntity FindEntity(int sceneUID) {
             foreach (var entity in remoteAuthorityGroup)
                 if (entity.sceneUID == sceneUID)
                     return entity;
@@ -39,18 +39,18 @@ namespace SiNet {
         }
 
         // the default authoriy type is: remove authoriy
-        public SyncGameObject InstantiateEntity(int prefabID,int sceneUID) {
+        public SyncEntity InstantiateEntity(int prefabID,int sceneUID) {
             try {
                 foreach (var entityPrefab in entityTable)
                 {
                     if (entityPrefab.id == prefabID)
                     {
                         var entityGO = GameObject.Instantiate(entityPrefab.prefab);
-                        var syncGO = entityGO.GetComponent<SyncGameObject>();
+                        var syncGO = entityGO.GetComponent<SyncEntity>();
                         syncGO.mirrorObjectID = prefabID;
                         syncGO.sceneUID = sceneUID;
 
-                        syncGO.authorityType = SyncGameObject.AuthorityType.remote;
+                        syncGO.authorityType = SyncEntity.AuthorityType.remote;
                         remoteAuthorityGroup.Add(syncGO);
 
                         return syncGO;
@@ -70,14 +70,14 @@ namespace SiNet {
             else
                 DestroyImmediate(this);
 
-            localAuthorityGroup = new List<SyncGameObject>();
-            remoteAuthorityGroup = new List<SyncGameObject>();
-            serverAuthorityGroup = new List<SyncGameObject>();
+            localAuthorityGroup = new List<SyncEntity>();
+            remoteAuthorityGroup = new List<SyncEntity>();
+            serverAuthorityGroup = new List<SyncEntity>();
 
-            foreach (var entity in FindObjectsOfType<SyncGameObject>()) {
-                if (entity.authorityType == SyncGameObject.AuthorityType.local)
+            foreach (var entity in FindObjectsOfType<SyncEntity>()) {
+                if (entity.authorityType == SyncEntity.AuthorityType.local)
                     localAuthorityGroup.Add(entity);
-                else if (entity.authorityType == SyncGameObject.AuthorityType.remote)
+                else if (entity.authorityType == SyncEntity.AuthorityType.remote)
                     localAuthorityGroup.Add(entity);
             }
         }
