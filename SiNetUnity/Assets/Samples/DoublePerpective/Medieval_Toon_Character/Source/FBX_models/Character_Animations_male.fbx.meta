@@ -1,0 +1,1296 @@
+fileFormatVersion: 2
+guid: d82b72f5db143b846bd770d5c20b07c4
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: bones_grp
+    100002: cc_grp
+    100004: Char_2:Mesh
+    100006: //RootNode
+    100008: curve2
+    100010: curve3
+    100012: curve4
+    100014: curve5
+    100016: curve6
+    100018: curve7
+    100020: curve8
+    100022: curve9
+    100024: Extra_Grp
+    100026: Geometry_grp
+    100028: global_ctrl
+    100030: ik_grp
+    100032: ikHandle1
+    100034: ikHandle2
+    100036: ikHandle3
+    100038: ikHandle4
+    100040: ikHandle6
+    100042: ikHandle7
+    100044: joint10
+    100046: joint11
+    100048: joint12
+    100050: joint13
+    100052: joint14
+    100054: joint15
+    100056: joint16
+    100058: joint17
+    100060: joint18
+    100062: joint19
+    100064: joint20
+    100066: joint21
+    100068: joint22
+    100070: joint23
+    100072: joint24
+    100074: joint3
+    100076: joint4
+    100078: joint5
+    100080: joint6
+    100082: joint7
+    100084: joint8
+    100086: joint9
+    100088: locator10
+    100090: locator11
+    100092: locator2
+    100094: locator3
+    100096: locator4
+    100098: locator5
+    100100: locator6
+    100102: locator7
+    100104: locator8
+    100106: locator9
+    100108: locator9 1
+    100110: nurbsCircle1
+    100112: nurbsCircle2
+    100114: nurbsCircle3
+    100116: nurbsCircle4
+    100118: nurbsCircle5
+    100120: nurbsCircle6
+    100122: nurbsCircle7
+    100124: nurbsCircle8
+    100126: Root_2
+    400000: bones_grp
+    400002: cc_grp
+    400004: Char_2:Mesh
+    400006: //RootNode
+    400008: curve2
+    400010: curve3
+    400012: curve4
+    400014: curve5
+    400016: curve6
+    400018: curve7
+    400020: curve8
+    400022: curve9
+    400024: Extra_Grp
+    400026: Geometry_grp
+    400028: global_ctrl
+    400030: ik_grp
+    400032: ikHandle1
+    400034: ikHandle2
+    400036: ikHandle3
+    400038: ikHandle4
+    400040: ikHandle6
+    400042: ikHandle7
+    400044: joint10
+    400046: joint11
+    400048: joint12
+    400050: joint13
+    400052: joint14
+    400054: joint15
+    400056: joint16
+    400058: joint17
+    400060: joint18
+    400062: joint19
+    400064: joint20
+    400066: joint21
+    400068: joint22
+    400070: joint23
+    400072: joint24
+    400074: joint3
+    400076: joint4
+    400078: joint5
+    400080: joint6
+    400082: joint7
+    400084: joint8
+    400086: joint9
+    400088: locator10
+    400090: locator11
+    400092: locator2
+    400094: locator3
+    400096: locator4
+    400098: locator5
+    400100: locator6
+    400102: locator7
+    400104: locator8
+    400106: locator9
+    400108: locator9 1
+    400110: nurbsCircle1
+    400112: nurbsCircle2
+    400114: nurbsCircle3
+    400116: nurbsCircle4
+    400118: nurbsCircle5
+    400120: nurbsCircle6
+    400122: nurbsCircle7
+    400124: nurbsCircle8
+    400126: Root_2
+    4300000: Char_2:Mesh
+    7400000: walk_anim01
+    7400002: run_anim01
+    7400004: idle_anim01
+    7400006: jump_anim01
+    9500000: //RootNode
+    13700000: Char_2:Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk_anim01
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_grp
+        weight: 0
+      - path: Geometry_grp/Char_2:Mesh
+        weight: 0
+      - path: global_ctrl
+        weight: 1
+      - path: global_ctrl/nurbsCircle8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5/joint6
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18/joint19
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23/joint24
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/Extra_Grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2/locator4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8/locator3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4/locator9 1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/locator9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3/locator5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6/locator11
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7/locator6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/locator10
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2/locator2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5/locator7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/locator8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle7
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run_anim01
+      takeName: Take 001
+      firstFrame: 27
+      lastFrame: 43
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_grp
+        weight: 0
+      - path: Geometry_grp/Char_2:Mesh
+        weight: 0
+      - path: global_ctrl
+        weight: 1
+      - path: global_ctrl/nurbsCircle8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5/joint6
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18/joint19
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23/joint24
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/Extra_Grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2/locator4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8/locator3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4/locator9 1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/locator9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3/locator5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6/locator11
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7/locator6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/locator10
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2/locator2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5/locator7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/locator8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle7
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle_anim01
+      takeName: Take 001
+      firstFrame: 46
+      lastFrame: 84
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_grp
+        weight: 0
+      - path: Geometry_grp/Char_2:Mesh
+        weight: 0
+      - path: global_ctrl
+        weight: 1
+      - path: global_ctrl/nurbsCircle8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5/joint6
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18/joint19
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23/joint24
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/Extra_Grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2/locator4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8/locator3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4/locator9 1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/locator9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3/locator5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6/locator11
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7/locator6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/locator10
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2/locator2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5/locator7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/locator8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle7
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: jump_anim01
+      takeName: Take 001
+      firstFrame: 87
+      lastFrame: 109
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Geometry_grp
+        weight: 0
+      - path: Geometry_grp/Char_2:Mesh
+        weight: 0
+      - path: global_ctrl
+        weight: 1
+      - path: global_ctrl/nurbsCircle8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint5/joint6
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint15/joint16/joint17/joint18/joint19
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint3/joint4/joint20/joint21/joint22/joint23/joint24
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint7/joint8/joint9/joint10
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/bones_grp/Root_2/joint11/joint12/joint13/joint14
+        weight: 1
+      - path: global_ctrl/nurbsCircle8/Extra_Grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve2/locator4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve8/locator3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/curve4/locator9 1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/locator9
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve3/locator5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve6/locator11
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/curve7/locator6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/locator10
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle2/locator2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/curve5/nurbsCircle5/locator7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/curve9/nurbsCircle3/locator8
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/cc_grp/nurbsCircle7
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle1
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle2
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle3
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle4
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle6
+        weight: 0
+      - path: global_ctrl/nurbsCircle8/Extra_Grp/ik_grp/ikHandle7
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Root_2
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint11
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint7
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint12
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint8
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint13
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint9
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint3
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint4
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint5
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint6
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint15
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint20
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint16
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint21
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint17
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint22
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint18
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint23
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint14
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: joint10
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Character_Animations_1(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Geometry_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Char_2:Mesh
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: global_ctrl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle8
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.64284277, y: 2.64284277, z: 2.64284277}
+      transformModified: 1
+    - name: bones_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .378380418, y: .378380418, z: .378380418}
+      transformModified: 1
+    - name: Root_2
+      position: {x: -2.22044605e-16, y: .0216432288, z: .00109961466}
+      rotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: joint3
+      position: {x: -.00592960324, y: -7.06863457e-10, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: joint4
+      position: {x: -.00644440856, y: -7.68233477e-10, z: -1.16415322e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: joint5
+      position: {x: -.00509671494, y: -6.0757599e-10, z: 3.49245965e-10}
+      rotation: {x: -.701863825, y: .0859491676, z: .0859491676, w: .701863825}
+      scale: {x: 1, y: .999999821, z: .999999642}
+      transformModified: 1
+    - name: joint6
+      position: {x: -.00360922702, y: -1.63006642e-09, z: -5.88679383e-10}
+      rotation: {x: .435517401, y: -.557067871, z: .435517401, w: .557067871}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: joint15
+      position: {x: -.000303215347, y: -.00392798427, z: -.00129929383}
+      rotation: {x: -8.53047222e-19, y: 1.0531006e-18, z: .629437685, w: .777051032}
+      scale: {x: .99999994, y: .999999881, z: 1}
+      transformModified: 1
+    - name: joint16
+      position: {x: -.00425485196, y: -6.37353281e-09, z: 5.82076609e-10}
+      rotation: {x: -.0189229231, y: -.00570244947, z: .129801735, w: .991342962}
+      scale: {x: .99999994, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: joint17
+      position: {x: -.00929722469, y: 6.77709444e-09, z: 4.78458273e-10}
+      rotation: {x: .0752121061, y: .0411310345, z: -.0219722856, w: .996076643}
+      scale: {x: 1.00000024, y: 1, z: 1}
+      transformModified: 1
+    - name: joint18
+      position: {x: -.00793945789, y: -3.40574613e-09, z: -1.13717924e-09}
+      rotation: {x: -.0413513891, y: -.0536735319, z: -.0130044082, w: .997617245}
+      scale: {x: 1.00000012, y: .99999994, z: 1}
+      transformModified: 1
+    - name: joint19
+      position: {x: -.0038067787, y: 6.78965506e-09, z: 3.60330821e-10}
+      rotation: {x: -4.72069672e-09, y: -6.10464479e-09, z: -.316184491, w: .948697746}
+      scale: {x: .999999762, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: joint20
+      position: {x: -.000303268433, y: .00392799219, z: -.0012992936}
+      rotation: {x: -.777045429, y: .629444599, z: 3.85423715e-17, w: -4.75803156e-17}
+      scale: {x: .999999642, y: .999999881, z: .999999464}
+      transformModified: 1
+    - name: joint21
+      position: {x: -.0042548473, y: 1.72233943e-08, z: -1.28056876e-09}
+      rotation: {x: .0189231858, y: .00570196612, z: .129791841, w: .991344333}
+      scale: {x: .999999762, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: joint22
+      position: {x: -.0092972219, y: -6.11067152e-09, z: 3.26211036e-09}
+      rotation: {x: -.0752123967, y: -.0411306284, z: -.0219736546, w: .996076584}
+      scale: {x: 1, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: joint23
+      position: {x: -.00793940667, y: -2.71872889e-08, z: -4.21227764e-09}
+      rotation: {x: .0413511582, y: .0536739342, z: -.0130071118, w: .997617185}
+      scale: {x: 1.00000024, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: joint24
+      position: {x: -.00380684366, y: 1.70479577e-08, z: -6.37818021e-10}
+      rotation: {x: -.316180408, y: -.948699057, z: 1.86792848e-09, w: 9.12715237e-09}
+      scale: {x: 1.00000036, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: joint7
+      position: {x: .00189672003, y: .00495317206, z: .000476786168}
+      rotation: {x: -.065063715, y: .704107046, z: .704107106, w: .0650637597}
+      scale: {x: .999999583, y: .999999821, z: .999999762}
+      transformModified: 1
+    - name: joint8
+      position: {x: -.00735613331, y: -1.43707801e-09, z: 7.98877631e-10}
+      rotation: {x: -.981045723, y: -.193776786, z: -3.49121593e-10, w: 6.51231531e-08}
+      scale: {x: 1.00000024, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: joint9
+      position: {x: -.00915295351, y: 7.13327952e-10, z: -7.65524144e-10}
+      rotation: {x: .825335085, y: .564643383, z: 3.21857314e-08, w: 3.44169138e-08}
+      scale: {x: .999999821, y: .999999583, z: .999999523}
+      transformModified: 1
+    - name: joint10
+      position: {x: -.00471037207, y: 6.99680147e-10, z: 8.18866641e-10}
+      rotation: {x: -.201021641, y: -.677930892, z: -.201021656, w: .677930892}
+      scale: {x: 1, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: joint11
+      position: {x: .00189673796, y: -.00495317206, z: .000476783724}
+      rotation: {x: -.0650637522, y: .704107046, z: .704107046, w: .0650637522}
+      scale: {x: .999999762, y: .999999762, z: .999999881}
+      transformModified: 1
+    - name: joint12
+      position: {x: -.0073561524, y: 2.0680937e-09, z: 8.74828709e-10}
+      rotation: {x: -.981045544, y: -.193777278, z: 2.69336589e-08, w: -3.24181251e-08}
+      scale: {x: .999999821, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: joint13
+      position: {x: -.00915291253, y: -2.4052671e-10, z: -4.10992462e-10}
+      rotation: {x: .825334966, y: .564643383, z: -2.02039114e-08, w: 5.9909202e-09}
+      scale: {x: 1.00000024, y: 1.00000024, z: 1.00000048}
+      transformModified: 1
+    - name: joint14
+      position: {x: -.00471037021, y: -4.11469125e-09, z: 1.54222368e-09}
+      rotation: {x: -.20102194, y: -.677930832, z: -.201021954, w: .677930892}
+      scale: {x: .999999762, y: 1, z: .999999762}
+      transformModified: 1
+    - name: Extra_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .378380418, y: .378380418, z: .378380418}
+      transformModified: 1
+    - name: cc_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve2
+      position: {x: -.00495317066, y: .0035550138, z: -.00667106593}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator4
+      position: {x: -0, y: 0, z: 2.7755575e-19}
+      rotation: {x: .20102191, y: .677930832, z: .20102191, w: .677930832}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve8
+      position: {x: .00495317066, y: .0035550138, z: .0079369219}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator3
+      position: {x: -7.96432476e-10, y: -3.93751698e-09, z: -4.11724699e-09}
+      rotation: {x: .201021597, y: .677930951, z: .201021597, w: .677930951}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve9
+      position: {x: 4.11802906e-35, y: .0193089917, z: .00109961466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve4
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator9 1
+      position: {x: -2.220446e-18, y: -4.440892e-18, z: 0}
+      rotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator9
+      position: {x: -2.220446e-18, y: -4.440892e-18, z: 0}
+      rotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle3
+      position: {x: 2.46593708e-18, y: .00592960464, z: -8.89736063e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve5
+      position: {x: -2.46593708e-18, y: .00644440576, z: 8.89736063e-11}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve3
+      position: {x: .0128075415, y: -.0141427862, z: -.00603150111}
+      rotation: {x: .333424091, y: -.623501837, z: -.244901329, w: .663398206}
+      scale: {x: 1, y: 1, z: .558224976}
+      transformModified: 1
+    - name: locator5
+      position: {x: -4.60612526e-08, y: 1.28379689e-08, z: -3.05181547e-10}
+      rotation: {x: .316180438, y: .948699117, z: 1.79177962e-16, w: 3.58311216e-16}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve6
+      position: {x: -3.65793846e-19, y: .00509670284, z: -2.29271463e-10}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator11
+      position: {x: -0, y: 0, z: -5.551115e-19}
+      rotation: {x: -.435517401, y: .557067871, z: -.435517401, w: .557067871}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: curve7
+      position: {x: -.0117362523, y: -.0142444586, z: .00487999897}
+      rotation: {x: -.0365990847, y: .778635263, z: .110527664, w: .616580307}
+      scale: {x: 1, y: 1, z: .586342096}
+      transformModified: 1
+    - name: locator6
+      position: {x: -3.09296616e-11, y: 3.73033965e-11, z: -8.31001587e-12}
+      rotation: {x: -1.51831294e-08, y: -6.14205886e-09, z: .316184551, w: .948697746}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator10
+      position: {x: -3.24045172e-18, y: -4.440892e-18, z: -1.71940698e-10}
+      rotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle1
+      position: {x: -.0151413213, y: -.00482659927, z: -.0219329428}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle2
+      position: {x: -.00809012726, y: .000145425511, z: -.0221252516}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator2
+      position: {x: -0, y: 0, z: .020825956}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle4
+      position: {x: .0151413213, y: -.00482659927, z: -.0219329428}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle5
+      position: {x: .00809012726, y: .000470609433, z: -.0221252516}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator7
+      position: {x: 2.29900987e-09, y: -3.12917763e-08, z: .020825956}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: locator8
+      position: {x: -2.45490998e-19, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle6
+      position: {x: .0049531702, y: .0125149377, z: .0233438481}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: nurbsCircle7
+      position: {x: -.00495317066, y: .0125149377, z: .0233438481}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ik_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ikHandle1
+      position: {x: -.00495317066, y: .00355501403, z: -.00667106546}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ikHandle2
+      position: {x: .0049531702, y: .00355503242, z: .00793690793}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ikHandle3
+      position: {x: -.0117362523, y: .0174385421, z: .0059796134}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ikHandle4
+      position: {x: -.00817978568, y: .0318250284, z: -.000199679227}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ikHandle6
+      position: {x: .0128075359, y: .0175402574, z: -.00493190764}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ikHandle7
+      position: {x: .00817939173, y: .0321571678, z: -.000199678994}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  userData: 

@@ -4,6 +4,9 @@ using System.Linq;
 using UnityEngine;
 
 namespace SiNet {
+    // [deprecated soon]
+    // entity manager should belong to 'system', other than this special case 'entity manager'
+    // for 'system', maintaing the target entites is the core function
     public class EntityManager : MonoBehaviour
     {
         public static EntityManager instance = null;
@@ -16,7 +19,6 @@ namespace SiNet {
 
         [SerializeField]
         private List<EntityPrefab> entityTable;
-
 
         public List<SyncEntity> remoteAuthorityGroup;
         public List<SyncEntity> serverAuthorityGroup;
@@ -74,7 +76,19 @@ namespace SiNet {
             remoteAuthorityGroup = new List<SyncEntity>();
             serverAuthorityGroup = new List<SyncEntity>();
 
-            foreach (var entity in FindObjectsOfType<SyncEntity>()) {
+            StartCoroutine(EntityGroupRefreshing());
+        }
+
+        IEnumerator EntityGroupRefreshing() {
+            while (true) {
+                RefreshEntityGroup();
+                yield return new WaitForSeconds(1f);
+            }
+        }
+
+        private void RefreshEntityGroup() {
+            foreach (var entity in FindObjectsOfType<SyncEntity>())
+            {
                 if (entity.authorityType == SyncEntity.AuthorityType.local)
                     localAuthorityGroup.Add(entity);
                 else if (entity.authorityType == SyncEntity.AuthorityType.remote)
