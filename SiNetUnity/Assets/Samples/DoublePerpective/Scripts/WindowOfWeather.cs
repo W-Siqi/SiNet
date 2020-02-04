@@ -10,6 +10,8 @@ public class WindowOfWeather : MonoBehaviour
     private AudioClip rainSound;
     [SerializeField]
     private AudioClip sunnySound;
+    [SerializeField]
+    private Animator windowAnimatior;
 
     private void Start()
     {
@@ -17,11 +19,13 @@ public class WindowOfWeather : MonoBehaviour
     }
 
     public void OpenToRain() {
+        windowAnimatior.SetTrigger("open");
         audioSource.clip = rainSound;
         audioSource.Play();
     }
 
     public void OpenToSunny(){
+        windowAnimatior.SetTrigger("open");
         audioSource.clip = sunnySound;
         audioSource.Play();
     }
