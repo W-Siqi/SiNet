@@ -9,6 +9,9 @@ namespace SiNet {
                 case Message.Type.syncMessage:
                     ProcessSyncMessage(message);
                     break;
+                case Message.Type.RPC:
+                    ProcessRPCMessage(message);
+                    break;
                 default:
                     Debug.LogError("cannot handle this type yet");
                     break;
@@ -42,5 +45,20 @@ namespace SiNet {
 				Debug.Log("[Message Preceoss fail]:" + message.body);
 			}
 		}
+
+        private static void ProcessRPCMessage(Message message) {
+            try
+            {
+                var transmitable = JsonUtility.FromJson<TransmitableRPCPlaceHolderInfo>(message.body);
+                var RPCsig = transmitable.ToOriginalObject() as RPCSignaturePlaceHolder;
+                Debug.Log("[Message Stack] - RPC messsage :" + RPCsig.name);
+                RPCReceiverPlaceHolder.ReceiveRPC(RPCsig);
+            }
+            catch(System.Exception e)
+            {
+                Debug.Log("[Message Preceoss fail]:" + message.body);
+                Debug.Log(e.Message);
+            }
+        }
     }
 }

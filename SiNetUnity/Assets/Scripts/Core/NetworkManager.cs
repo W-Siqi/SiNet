@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SiNet{
+    // TBD: upload message should belong to message collector
     public class NetworkManager : MonoBehaviour
     {
         const float CONNECTION_CHECK_INTERVAL = 1f;
@@ -89,6 +90,14 @@ namespace SiNet{
             {
                 if (online)
                 {
+
+                    // check messager collecters
+                    var messagesFromCollectors = MessageCollector.instance.ReadMessages();
+                    foreach (var m in messagesFromCollectors) {
+                        serverConnection.Send(m);
+                    }
+
+                    // check loacal obejcts
                     var localObjects = entityManager.localAuthorityGroup;
                     var assigned = new List<SyncEntity>();
                     var unassigned = new List<SyncEntity>();

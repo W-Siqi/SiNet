@@ -8,7 +8,7 @@ namespace SiNet {
 	// the encode/decode method (in MessageBodyProtocal) depends on the type of the message 
 	public class Message
     {
-        public enum Type { none,syncMessage,eventMessage,IntValues};
+        public enum Type { none,syncMessage,RPC};
 
         public float time;
 

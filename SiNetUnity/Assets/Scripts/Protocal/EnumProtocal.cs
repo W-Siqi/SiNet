@@ -6,6 +6,7 @@ namespace SiNet {
     public class EnumProtocal
     {
         const string MESSAGE_TYPE_SYNC = "sync";
+        const string MESSAGE_TYPE_RPC = "RPC";
         const string MESSAGE_TYPE_NONE = "none";
 
         public static string Encode(Message.Type type) {
@@ -16,6 +17,9 @@ namespace SiNet {
                     break;
                 case Message.Type.none:
                     str = MESSAGE_TYPE_NONE;
+                    break;
+                case Message.Type.RPC:
+                    str = MESSAGE_TYPE_RPC;
                     break;
                 default:
                     Debug.LogError("UNDEFINED TYPE");
@@ -32,6 +36,9 @@ namespace SiNet {
                     break;
                 case MESSAGE_TYPE_NONE:
                     type = Message.Type.none;
+                    break;
+                case MESSAGE_TYPE_RPC:
+                    type = Message.Type.RPC;
                     break;
                 default:
                     Debug.LogError("UNDEFINED TYPE");
