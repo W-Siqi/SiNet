@@ -2,9 +2,16 @@ function processMessage(syncSession, message){
     if(message.type == "sync"){
         processSyncMessage(syncSession,message);
     }
-    else{
-        console.log("process fail");
+    else if(message.type == "RPC"){
+        processRPCMessage(syncSession,message);
     }
+    else{
+        console.log("process fail- type: "+message.type);
+    }
+}
+
+function processRPCMessage(syncSession,message){
+    syncSession.boardcastRPC(message);
 }
 
 function processSyncMessage(syncSession,message){

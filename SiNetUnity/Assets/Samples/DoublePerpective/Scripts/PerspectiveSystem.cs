@@ -9,8 +9,14 @@ public class PerspectiveSystem : MonoBehaviour
         patient,nurse,none
     }
 
-    public PerspectiveType selectedPespective = PerspectiveType.none;
+    public enum Event
+    {
+        openWindow
+    }
 
+    public PerspectiveEventProcessor eventProcessor;
+
+    public PerspectiveType selectedPespective = PerspectiveType.none;
     public GameObject perspectiveCharacter=null;
     public GameObject patientCharacterPrefab;
     public GameObject nurseCharacterPrefab;
@@ -57,5 +63,9 @@ public class PerspectiveSystem : MonoBehaviour
         }
 
         selectedPespective = type;
+    }
+
+    public void TriggerPespectiveEvent(Event perspectiveEvent) {
+        eventProcessor.ProcessEvent(perspectiveEvent);
     }
 }

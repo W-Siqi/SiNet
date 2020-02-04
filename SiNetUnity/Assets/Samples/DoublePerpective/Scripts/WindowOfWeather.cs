@@ -2,17 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class WindowOfWeather : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip rainSound;
+    [SerializeField]
+    private AudioClip sunnySound;
+
+    private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OpenToRain() {
+        audioSource.clip = rainSound;
+        audioSource.Play();
+    }
+
+    public void OpenToSunny(){
+        audioSource.clip = sunnySound;
+        audioSource.Play();
     }
 }

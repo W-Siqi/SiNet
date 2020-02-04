@@ -5,6 +5,26 @@ class SyncSession{
     clientIDCounter = 1;
     entities = [];
     clients = [];
+
+    // TBD-Placeholder! 
+    boardcastRPC(RPCmessage){
+        let message = new Message('RPC',RPCmessage.body);
+              
+        // boardcasr messages to all sockects
+        for(let i =0; i < this.clients.length;i++){
+            let client = this.clients[i];
+            if(client.socket.destroyed){
+                this.clients.splice(i,1);
+                i--;
+            }
+            else{
+                client.socket.write(message.encodeToString(),function(){
+                    console.log("[RPC message to client]");
+                })  
+            }
+        }
+    }
+
     updateEntity(lastestSnapshot){
         for(let i in this.entities){
             let enti = this.entities[i];
@@ -30,7 +50,7 @@ class SyncSession{
 
     async start(frameMseconds){
         while(true){
-            console.log("[server frame] start-----------------------------------------------------------");
+            // console.log("[server frame] start-----------------------------------------------------------");
 
             // traverse entities
             // PS: server authority object doesn't sync for now
