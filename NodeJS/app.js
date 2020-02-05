@@ -4,10 +4,11 @@ var net = require("net");
 var Message = require("./Message");
 var SyncSession = require("./SyncSession");
 var processMessage = require("./MessageProcessing");
+var readPackages = require("./PackageReader");
 
 // the server has THE only session, for now
 var syncSession = new SyncSession();
-syncSession.start(50);
+syncSession.start(16);
 // create server 
 var server = net.createServer(function(socket){
     syncSession.addAddClient(socket);
@@ -22,17 +23,13 @@ var server = net.createServer(function(socket){
     socket.on('data',function(data){
         console.log("buffer size: "+ socket.bufferSize +"the size of data is"+socket.bytesRead);
 
-        // parase body 
-        var recvMes = Message.parse(data.toString());
-
-        processMessage(syncSession, recvMes);
-        // response test
-        // var responseMes = new Message("sync",recvMes.body);
-        // socket.write(responseMes.toString(),function(){
-        //     var writeSize = socket.bytesWritten;
-        //     console.log("the size of message is"+writeSize);
-        // })    
+        let packgeStrs = readPackages(data.toString());
+        packgeStrs.forEach(packageStr => {
+            let recvMes = Message.parse(packageStr);
+            processMessage(syncSession,recvMes);
+        });
     })
+
     socket.on('close',function(haderror){
         console.log('closed, desgtroyed: ',socket.destroyed);
     })

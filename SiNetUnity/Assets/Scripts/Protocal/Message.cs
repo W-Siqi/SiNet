@@ -25,8 +25,10 @@ namespace SiNet {
         private Message() { }
 
 		public byte[] ToBytes() {
-            var jsonStr = JsonUtility.ToJson(this);
-            return  Encoding.ASCII.GetBytes(jsonStr);
+            var contentStr = JsonUtility.ToJson(this);
+            var dataLen = contentStr.Length; 
+            var packageStr = string.Format("%{0}{1}%",dataLen.ToString(),contentStr);
+            return  Encoding.ASCII.GetBytes(packageStr);
         }
     }
 }
