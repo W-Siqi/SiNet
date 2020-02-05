@@ -36,7 +36,7 @@ var server = net.createServer(function(socket){
 })
 
 // listen
-server.listen(8000,"127.0.0.1",function(){
+server.listen(8000,function(){
     var address = server.address();
     var message = "the server address is:"+JSON.stringify(address.address);
     console.log(message);
