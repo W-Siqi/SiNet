@@ -12,10 +12,11 @@ class Message {
 
     static parse(strData) {
         try{
-            var m= JSON.parse(strData.toString());
+            var m= JSON.parse(strData);
         }
         catch(e){
             console.log("[Transmit error] --------------------- bad message--------------");
+            console.log(strData);
             let message = new Message();
             message.type = "bad";
             message.time = 0;

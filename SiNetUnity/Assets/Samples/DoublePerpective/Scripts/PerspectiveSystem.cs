@@ -20,6 +20,7 @@ public class PerspectiveSystem : MonoBehaviour
     public GameObject perspectiveCharacter=null;
     public GameObject patientCharacterPrefab;
     public GameObject nurseCharacterPrefab;
+    public GameObject nurseUI;
 
     public static PerspectiveSystem _instance = null;
 
@@ -53,9 +54,11 @@ public class PerspectiveSystem : MonoBehaviour
         switch (type) {
             case PerspectiveType.nurse:
                 perspectiveCharacter = Instantiate(nurseCharacterPrefab);
+                StartCoroutine(ShowNurseUIAfter(5f));
                 break;
             case PerspectiveType.patient:
                 perspectiveCharacter = Instantiate(patientCharacterPrefab);
+                SubtitlePlayer.instance.PlaySubtitle(0, 3f);
                 break;
             default:
                 Debug.LogWarning("may has bug! because the type doesn't has prefab");
@@ -63,9 +66,17 @@ public class PerspectiveSystem : MonoBehaviour
         }
 
         selectedPespective = type;
+
+        ViewCam.instance.OpenCam();
+        ViewCam.instance.focusPoint = perspectiveCharacter.transform;
     }
 
     public void TriggerPespectiveEvent(Event perspectiveEvent) {
         eventProcessor.ProcessEvent(perspectiveEvent);
     }
+
+    private IEnumerator ShowNurseUIAfter(float seconds) {
+        yield return new WaitForSeconds(seconds);
+        nurseUI.SetActive(true);
+    } 
 }

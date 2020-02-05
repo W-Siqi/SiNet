@@ -23,9 +23,11 @@ public class PerspectiveEventProcessor
         if (perspective == PerspectiveSystem.PerspectiveType.patient)
         {
             weatherWindow.OpenToRain();
+            SubtitlePlayer.instance.PlaySubtitle(1, 4f);
         }
         else {
             weatherWindow.OpenToSunny();
+            SubtitlePlayer.instance.PlaySubtitle(2, 4f);
         }
     }
 }
