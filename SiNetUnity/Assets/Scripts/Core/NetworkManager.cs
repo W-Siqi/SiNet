@@ -46,24 +46,16 @@ namespace SiNet{
                     // first lost connection
                     online = false;
                     OnConnectLost();
-                    Debug.Log("to offLine mode!");
                 }
                 else if (!serverConnection.isConnected && !online)
                 {
-                    // re connect
-                    // 重构！！！
-                    Message response = new Message(Message.Type.none, ""); 
-                    serverConnection.Connect(null,response);
-
+                    Debug.Log("try connect...");
                     yield return new WaitForSeconds(1f);
 
-                    if (response.type != EnumProtocal.Encode(Message.Type.none))
+                    if (serverConnection.isConnected)
                     {
                         online = true;
-                        OnConnectSuccess(response);
-                    }
-                    else {
-                        Debug.LogError("TimeOut");
+                        OnConnectSuccess();
                     }
                 }
 
@@ -139,11 +131,10 @@ namespace SiNet{
         private void OnConnectLost()
         {
             Debug.Log("connection lost!");
-            // destroy the sync object
         }
 
-        private void OnConnectSuccess(Message responce) {
-
+        private void OnConnectSuccess() {
+            Debug.Log("connect success!");
         }
 
         private void OnApplicationQuit()

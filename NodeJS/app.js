@@ -14,11 +14,7 @@ var server = net.createServer(function(socket){
     syncSession.addAddClient(socket);
 
     // first 
-    var helloMes = new Message("sync","first connect");
-    socket.write(helloMes.encodeToString(),function(){
-        var writeSize = socket.bytesWritten;
-        console.log("buffer size: "+ socket.bufferSize +"the size of message is： "+writeSize);
-    })    
+    console.log("one client connected");
     
     socket.on('data',function(data){
         console.log("buffer size: "+ socket.bufferSize +"the size of data is"+socket.bytesRead);

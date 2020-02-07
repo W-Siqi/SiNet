@@ -53,81 +53,68 @@ namespace SiNet {
 			socket.Send(sendData, sendData.Length, SocketFlags.None);
 		}
 
-        public void Connect(Message clientRequest,Message serverResponse) {
+        private void Connect() {
             if (socket != null)
                 socket.Close();
-
-            _isConnected = false;
 
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
                 socket.Connect(ipEnd);
+                _isConnected = true;
             }
             catch
             {
-                Debug.LogError("connect fail");
+                Debug.Log("connect fail");
+                _isConnected = false;
                 return;
-            }
-
-            // get first response
-            var recvData = new byte[MAX_DATA_SIZE];
-            var recvLen = socket.Receive(recvData);
-            
-            if (recvLen > 0)
-            {
-                _isConnected = true;
-
-                var recvStr = Encoding.ASCII.GetString(recvData, 0, recvLen);
-                var recvMessage = JsonUtility.FromJson<Message>(recvStr);
-
-                serverResponse.type = recvMessage.type;
-                serverResponse.body = recvMessage.body;
-
-                Debug.Log(serverResponse);
-            }
-            else
-            {
-                Debug.LogError("connected but no response from server");
             }
         }
 
         private void SocketReceiveLoop() {
+            Connect();
+
             while (true) {
-                if (!isConnected) {
-                    continue;
-                }
-
-                // receive data from server
-                var recvData = new byte[MAX_DATA_SIZE];
-                var recvLen = socket.Receive(recvData);
-
-                if (recvLen == 0)
+                try
                 {
-                    // lost connection
-                    Debug.Log("lost connection!!!");
-                    socket.Close();
-                    socket = null;
-                    _isConnected = false;
-                    continue;
-                }
-                else {
-                    // write receive data to buffer
-                    var recvStr = Encoding.ASCII.GetString(recvData, 0, recvLen);
-                    // Debug.Log("[receive data]: " + recvStr);
-                    Message recvMessage = null;
-                    try
+                    // receive data from server
+                    var recvData = new byte[MAX_DATA_SIZE];
+                    var recvLen = socket.Receive(recvData);
+
+                    if (recvLen == 0)
                     {
-                        recvMessage = JsonUtility.FromJson<Message>(recvStr);
-                    }
-                    catch {
-                        Debug.Log("[Bad Mesaage]: " + recvStr);
+                        // lost connection
+                        Debug.Log("lost connection!!!");
+                        _isConnected = false;
+                        Connect();
                         continue;
                     }
+                    else
+                    {
+                        // write receive data to buffer
+                        var recvStr = Encoding.ASCII.GetString(recvData, 0, recvLen);
+                        // Debug.Log("[receive data]: " + recvStr);
+                        Message recvMessage = null;
+                        try
+                        {
+                            recvMessage = JsonUtility.FromJson<Message>(recvStr);
+                        }
+                        catch
+                        {
+                            Debug.Log("[Bad Mesaage]: " + recvStr);
+                            continue;
+                        }
 
-                    receiveBuffer.Write(recvMessage);
+                        receiveBuffer.Write(recvMessage);
+                    }
                 }
+                catch {
+                    Debug.Log("lost connection!!!");
+                    _isConnected = false;
+                    Connect();
+                    continue;
+                }       
             }
         }        
     }
