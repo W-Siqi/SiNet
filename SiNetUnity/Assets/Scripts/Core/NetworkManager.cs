@@ -124,9 +124,7 @@ namespace SiNet{
 
                 yield return new WaitForSeconds(1f / config.syncFrames);
             }
-        }
-
-        
+        }   
 
         private void OnConnectLost()
         {
