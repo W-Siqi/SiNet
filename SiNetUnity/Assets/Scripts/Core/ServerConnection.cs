@@ -44,11 +44,9 @@ namespace SiNet {
 
             if (socket != null)
                 socket.Close();
-            Debug.Log("diconnect");
         }
 
 		public void Send(Message message) {
-            // Debug.Log("[send body]: " + message.body);
             var sendData = message.ToBytes();
 			socket.Send(sendData, sendData.Length, SocketFlags.None);
 		}
@@ -66,7 +64,6 @@ namespace SiNet {
             }
             catch
             {
-                Debug.Log("connect fail");
                 _isConnected = false;
                 return;
             }
@@ -85,7 +82,6 @@ namespace SiNet {
                     if (recvLen == 0)
                     {
                         // lost connection
-                        Debug.Log("lost connection!!!");
                         _isConnected = false;
                         Connect();
                         continue;
@@ -110,7 +106,6 @@ namespace SiNet {
                     }
                 }
                 catch {
-                    Debug.Log("lost connection!!!");
                     _isConnected = false;
                     Connect();
                     continue;

@@ -49,8 +49,10 @@ namespace SiNet{
                 }
                 else if (!serverConnection.isConnected && !online)
                 {
-                    Debug.Log("try connect...");
-                    yield return new WaitForSeconds(1f);
+                    // try connecting
+                    Debug.LogWarning("[SiNet]try connect...");
+
+                    yield return new WaitForSeconds(CONNECTION_CHECK_INTERVAL);
 
                     if (serverConnection.isConnected)
                     {

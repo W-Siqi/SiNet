@@ -9,17 +9,10 @@ namespace SiNet {
         public Vector3 localScale;
         public Quaternion rotation;
 
-        private SyncEntity attachedEntity = null;
-
-        private void Start()
-        {
-            attachedEntity = GetComponent<SyncEntity>();
-       
-        }
-
         // sync to the real transform if it under the local authority
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             if (attachedEntity.authorityType == SyncEntity.AuthorityType.local) {
                 position = transform.position;
                 localScale = transform.localScale;
@@ -31,6 +24,7 @@ namespace SiNet {
         {
             var snapshot = new SyncComponentSnapshot();
             snapshot.innerID = innerID;
+            snapshot.timeStamp = timeStamp;
 
             // encode part
             snapshot.values = new float[]{
@@ -48,6 +42,8 @@ namespace SiNet {
                 Debug.Log("[Bad message]-state error");
                 return;
             }
+
+            timeStamp = snapshot.timeStamp;
 
             // decode part
             var v = snapshot.values;

@@ -6,6 +6,9 @@ namespace SiNet {
     public class MovementSystem : MonoBehaviour
     {
         const float ENTITY_LIST_UPDATE_INTERVAL = 1f;
+        const float VERY_SMALL_VAL = 0.01f;
+
+        const float ACCEPTABLE_POSIBITON_BIAS = 0.5f;
 
         // MovementSystem will create and update the MovementEnity
         // The real-time position caltucated by MovementEntity
@@ -13,8 +16,10 @@ namespace SiNet {
             public SyncEntity entity;
             public SyncTransform syncTransform;
 
-            private float lastUpdateTime;
+            private float lastUpdateTime = -1f;
             private Vector3 lastPos;
+
+            private Vector3 curVelocity;
 
             public bool isValid { get { return entity != null && syncTransform != null; } }
 
@@ -24,10 +29,78 @@ namespace SiNet {
             }
 
             // TBD: now the way calculation position is a placeholder
+            // MUST be called every frame!
             public void UpdateMovement() {
-                if (isValid) {
+                if (!isValid)
+                    return;
+
+                if (lastUpdateTime < 0)
+                {
+                    InitAsFirstState();
+                }
+                else
+                {
+                    if (isTransformUpdated)
+                        UpdateToLastestState();
+                    else
+                        UpdateBasedOnCurrentState();
+                }
+            }
+
+            private void InitAsFirstState() {
+                lastUpdateTime = syncTransform.timeStamp;
+
+                entity.transform.position = syncTransform.position;
+                entity.transform.rotation = syncTransform.rotation;
+
+                curVelocity = Vector3.zero;
+            }
+
+            private void UpdateToLastestState() {
+                var currentTheoryPosition = PredictCurrentPosition(
+                    lastPos, lastUpdateTime,
+                    syncTransform.position, syncTransform.timeStamp,
+                    ServerTime.current
+                    );
+                var predictedVelocity = (syncTransform.position - lastPos) / (syncTransform.timeStamp - lastUpdateTime);
+                var postionBias = (currentTheoryPosition - entity.transform.position);
+
+                if (postionBias.magnitude > ACCEPTABLE_POSIBITON_BIAS)
+                {
+                    // current position so different from the predictable value (for the latency or networking condition)
+                    // in this case, correct the valure directly
                     entity.transform.position = syncTransform.position;
                     entity.transform.rotation = syncTransform.rotation;
+
+                    curVelocity = predictedVelocity;
+                }
+                else {
+                    // in this case, everything goes well as the prediction
+                    // so just follow the predicted velocity
+                    // but need a little correstion based on the bias between current positon and predicted current postion
+                    var prediectedStateUpdateInterval = syncTransform.timeStamp - lastUpdateTime;
+                    var velocityCorrection = postionBias / prediectedStateUpdateInterval;
+                    curVelocity = predictedVelocity + velocityCorrection;
+
+                    entity.transform.position += curVelocity * Time.deltaTime;
+                }
+
+                lastPos = syncTransform.position;
+                lastUpdateTime = syncTransform.timeStamp;
+            }
+
+            private void UpdateBasedOnCurrentState() {
+                entity.transform.position += curVelocity * Time.deltaTime;
+            }
+
+            private Vector3 PredictCurrentPosition(Vector3 pos1,float time1,Vector3 pos2,float time2,float currentTime){
+                var velocity = (pos2 - pos1) / (time2 - time1);
+                return pos2 + velocity * (currentTime - time2);
+            }
+
+            private bool isTransformUpdated {
+                get {
+                    return Mathf.Abs(lastUpdateTime - syncTransform.timeStamp) > VERY_SMALL_VAL;
                 }
             }
 
