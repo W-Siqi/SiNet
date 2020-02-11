@@ -81,7 +81,9 @@ namespace SiNet {
                     var prediectedStateUpdateInterval = syncTransform.timeStamp - lastUpdateTime;
                     var velocityCorrection = postionBias / prediectedStateUpdateInterval;
                     curVelocity = predictedVelocity + velocityCorrection;
-
+                    if (curVelocity != Vector3.zero) {
+                        int this_is_a = 1;
+                    }
                     entity.transform.position += curVelocity * Time.deltaTime;
                 }
 

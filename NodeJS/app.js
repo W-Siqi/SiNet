@@ -12,7 +12,7 @@ ServerTime.InitTime();
 
 // the server has THE only session, for now
 var syncSession = new SyncSession();
-syncSession.start(16);
+syncSession.start(25);
 
 // create server 
 var server = net.createServer(function(socket){

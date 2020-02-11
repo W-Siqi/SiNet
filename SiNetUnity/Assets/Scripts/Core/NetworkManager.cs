@@ -88,11 +88,18 @@ namespace SiNet{
         {
             while (true)
             {
-                var messages = receiveBuffer.ReadAllMessages();
-                foreach (var m in messages)
+                try
                 {
-                    MessageProcessor.Process(m);
+                    var messages = receiveBuffer.ReadAllMessages();
+                    foreach (var m in messages)
+                    {
+                        MessageProcessor.Process(m);
+                    }
                 }
+                catch(System.Exception e) {
+                    Debug.Log(e.Message);
+                }
+
                 yield return null;
             }
         }
