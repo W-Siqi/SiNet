@@ -42,6 +42,10 @@ namespace SiNet {
             buffer.Add(message);
         }
 
+        public void Collect(Message message) {
+            buffer.Add(message);
+        }
+
         public Message[] ReadMessages() {
             var messages = buffer.ToArray();
             buffer.Clear();

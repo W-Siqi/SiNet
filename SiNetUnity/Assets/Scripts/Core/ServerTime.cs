@@ -5,13 +5,22 @@ using UnityEngine;
 namespace SiNet {
     public class ServerTime
     {
-        public static float InitServerTime(float currentServerTime) {
-            throw new System.NotImplementedException();
+        private static bool inited = false;
+        private static float localToServerBias;
+        public static void InitServerTime(float currentServerTime) {
+            inited = true;
+            localToServerBias = currentServerTime - Time.time;
         }
 
         public static float current {
             get {
-                throw new System.NotImplementedException();
+                if (inited)
+                {
+                    return Time.time + localToServerBias;
+                }
+                else {
+                    return -1;
+                }
             }
         }
     }

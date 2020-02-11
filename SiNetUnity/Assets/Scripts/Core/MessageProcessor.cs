@@ -49,10 +49,10 @@ namespace SiNet {
         private static void ProcessRPCMessage(Message message) {
             try
             {
-                var transmitable = JsonUtility.FromJson<TransmitableRPCPlaceHolderInfo>(message.body);
-                var RPCsig = transmitable.ToOriginalObject() as RPCSignaturePlaceHolder;
-                Debug.Log("[Message Stack] - RPC messsage :" + RPCsig.name);
-                RPCReceiverPlaceHolder.ReceiveRPC(RPCsig);
+                var transmitable = JsonUtility.FromJson<TransmitableRPCMessageBody>(message.body);
+                var rpcMsg = transmitable.ToOriginalObject() as RPCMessageBody;
+                Debug.Log("[Message Stack] - RPC messsage :" + rpcMsg.type.ToString());
+                RPCStub.instance.ProcessRPCMessage(rpcMsg);
             }
             catch(System.Exception e)
             {

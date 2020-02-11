@@ -9,7 +9,6 @@ namespace SiNet{
         const float CONNECTION_CHECK_INTERVAL = 1f;
 
         private EntityManager entityManager;
-        private EventProcessor eventProcessor;
 
         [SerializeField]
         private NetworkConfig config;
@@ -22,8 +21,6 @@ namespace SiNet{
 
         IEnumerator Start()
         {
-            eventProcessor = new EventProcessor();
-
             receiveBuffer = new ReceiveBuffer();
             serverConnection = new ServerConnection(config.hostIP, config.port,receiveBuffer);
 
@@ -56,6 +53,21 @@ namespace SiNet{
 
                     if (serverConnection.isConnected)
                     {
+                        Debug.Log("[SiNet] connect success, init...");
+
+                        var returnHandle =  RPCStub.instance.Call(
+                            RPCStub.CallableFunction.getServerTime,
+                            new RPCVariable());
+
+                        // wait when server time is ready
+                        while (true) {
+                            if (returnHandle.isReady) {
+                                ServerTime.InitServerTime(returnHandle.returnValue.GetFloat());
+                                break;
+                            }
+                            yield return null;
+                        }
+
                         online = true;
                         OnConnectSuccess();
                     }
