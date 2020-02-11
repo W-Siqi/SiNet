@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SiNet {
-    // this need 1 frame to init (in the start).
-    // so its frame wouln't be ready after the first frame
-
-    // TBD: use hash map to store the sync States
+    // ATTENTION: The order in syncStates matters, because we assign ID in this order.
+    // So as mirror entity, the order MUST be same with original entity
     public class SyncEntity : MonoBehaviour
     {
         public enum AuthorityType {
@@ -21,10 +19,14 @@ namespace SiNet {
         // Start is called before the first frame update
         void Start()
         {
-            syncStates = GetComponentsInChildren<SyncComponent>();
             int id = 1;
             foreach (var s in syncStates) {
                 s.innerID = id++;
+            }
+
+            var checkSyncStates = GetComponentsInChildren<SyncComponent>();
+            if (checkSyncStates.Length != syncStates.Length) {
+                Debug.LogError("[SiNet]: the sync componet doesn't match! CHECK THE PREFAB");
             }
         }
 
