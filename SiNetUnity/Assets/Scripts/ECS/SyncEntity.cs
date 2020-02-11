@@ -31,6 +31,7 @@ namespace SiNet {
         public SyncEntitySnapshot GetSnapshot() {
             var snapshot = new SyncEntitySnapshot();
 
+            snapshot.timeStamp = ServerTime.current;
             snapshot.sceneUID = sceneUID;
             snapshot.mirrorObjectID = mirrorObjectID;
 

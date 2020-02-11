@@ -6,6 +6,7 @@ namespace SiNet{
     // original type is 
     public class TransmitableSyncGOSnapshot : TransmitableObject
     {
+        public float timeStamp;
         public int sceneUID;
         public int mirrorObjectID = -1;
         public List<string> encodedMembers = new List<string>();
@@ -16,6 +17,7 @@ namespace SiNet{
             {
                 var syncGO = src as SyncEntitySnapshot;
 
+                this.timeStamp = syncGO.timeStamp;
                 this.sceneUID = syncGO.sceneUID;
                 this.mirrorObjectID = syncGO.mirrorObjectID;
 
@@ -34,6 +36,7 @@ namespace SiNet{
             var snapShot = new SyncEntitySnapshot();
             snapShot.sceneUID = sceneUID;
             snapShot.mirrorObjectID = mirrorObjectID;
+            snapShot.timeStamp = timeStamp;
 
             var syncStates = new List<SyncComponentSnapshot>();
             foreach (var encodedState in encodedMembers) {

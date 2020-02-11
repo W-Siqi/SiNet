@@ -5,6 +5,7 @@ using UnityEngine;
 namespace SiNet {
     public class SyncEntitySnapshot
     {
+        public float timeStamp;
         public int sceneUID = -1;
         public int mirrorObjectID = -1;
         public SyncComponentSnapshot[] syncStates;

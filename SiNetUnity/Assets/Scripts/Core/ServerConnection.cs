@@ -90,19 +90,9 @@ namespace SiNet {
                     {
                         // write receive data to buffer
                         var recvStr = Encoding.ASCII.GetString(recvData, 0, recvLen);
-                        // Debug.Log("[receive data]: " + recvStr);
-                        Message recvMessage = null;
-                        try
-                        {
-                            recvMessage = JsonUtility.FromJson<Message>(recvStr);
+                        foreach (var msg in PDUParser.ParsePDU(recvStr)) {
+                            receiveBuffer.Write(msg);
                         }
-                        catch
-                        {
-                            Debug.Log("[Bad Mesaage]: " + recvStr);
-                            continue;
-                        }
-
-                        receiveBuffer.Write(recvMessage);
                     }
                 }
                 catch {

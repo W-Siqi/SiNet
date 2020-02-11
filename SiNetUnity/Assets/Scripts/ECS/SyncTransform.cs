@@ -14,6 +14,7 @@ namespace SiNet {
         {
             base.Update();
             if (attachedEntity.authorityType == SyncEntity.AuthorityType.local) {
+                timeStamp = ServerTime.current;
                 position = transform.position;
                 localScale = transform.localScale;
                 rotation = transform.rotation;

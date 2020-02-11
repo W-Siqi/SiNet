@@ -32,7 +32,9 @@ class Message {
     }
 
     encodeToString(){
-        return JSON.stringify(this);
+        let content = JSON.stringify(this);
+        let len =  content.length;
+        return '%' + len.toString() + content + '%';
     }
 }
 
