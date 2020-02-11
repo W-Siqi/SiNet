@@ -5,7 +5,7 @@ function InitTime(){
 }
 
 function GetCurrentTime(){
-    return Date.now() - startTime;
+    return (Date.now() - startTime)/1000.0;
 }
 
 module.exports = {

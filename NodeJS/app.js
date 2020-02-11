@@ -20,9 +20,6 @@ var server = net.createServer(function(socket){
 
     // first 
     console.log("one client connected");
-    // the response is the server time, it is the RPC type FOR NOW (to be refactored)
-    let serverTimeMsgBody = ServerTime.GetCurrentTime().toString();
-    let serverTimeMsg = 
 
     socket.on('data',function(data){
         console.log("buffer size: "+ socket.bufferSize +"the size of data is"+socket.bytesRead);

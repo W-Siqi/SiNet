@@ -7,8 +7,8 @@ class SyncSession{
     clients = [];
 
     // TBD-Placeholder! 
-    boardcastRPC(RPCmessage){
-        let message = new Message('RPC',RPCmessage.body);
+    boardcastRPC(rpcMessageBody){
+        let message = new Message('RPC',rpcMessageBody.encodeToString());
               
         // boardcasr messages to all sockects
         for(let i =0; i < this.clients.length;i++){

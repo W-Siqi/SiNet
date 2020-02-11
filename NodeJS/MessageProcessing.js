@@ -1,3 +1,5 @@
+const RPCStub = require("./RPCStub");
+
 function processMessage(syncSession, message){
     if(message.type == "sync"){
         processSyncMessage(syncSession,message);
@@ -11,7 +13,7 @@ function processMessage(syncSession, message){
 }
 
 function processRPCMessage(syncSession,message){
-    syncSession.boardcastRPC(message);
+    RPCStub.processRPCMessage(syncSession,message);
 }
 
 function processSyncMessage(syncSession,message){

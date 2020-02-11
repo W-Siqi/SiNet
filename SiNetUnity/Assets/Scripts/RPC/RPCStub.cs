@@ -53,6 +53,7 @@ namespace SiNet{
             MessageCollector.instance.Collect(message);
 
             var returnHanlde = new RPCReturnHandle(signature);
+            registeredReturnHandles.Add(returnHanlde);
             return returnHanlde;
         }
 

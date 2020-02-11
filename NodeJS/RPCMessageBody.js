@@ -1,22 +1,35 @@
 class RPCMessageBody{
-    static fromString(strData) {
+    isCaller;
+    signature;
+    variable;
+    
+    static parse(strData) {
         try{
-            // console.log("Parse Data",strData);
             var m= JSON.parse(strData);
-        }
-        catch(e){
-            console.log(e.message);
-            let message = new Message();
-            message.type = "bad";
-            message.time = 0;
-            message.body = "";
+
+            let message = new RPCMessageBody();
+            message.isCaller = m.isCaller;
+            message.signature =JSON.parse(m.seriablzedRPCSignature);
+            message.variable = JSON.parse(m.serializedRPCVariable);
+
             return message;
         }
-       
-        let message = new Message();
-        message.time = m.time;
-        message.type = m.type;
-        message.body = m.body;
-        return message; 
+        catch(e){
+            let message = new RPCMessageBody();
+            message.isCaller = "bad";
+            message.signature = "";
+            message.variable = "";
+            return message;
+        }
+    }
+
+    encodeToString(){
+        let m = new Object();
+        m.isCaller = this.isCaller;
+        m.seriablzedRPCSignature = JSON.stringify(this.signature);
+        m.serializedRPCVariable = JSON.stringify(this.variable);
+        return JSON.stringify(m);
     }
 }
+
+module.exports = RPCMessageBody;

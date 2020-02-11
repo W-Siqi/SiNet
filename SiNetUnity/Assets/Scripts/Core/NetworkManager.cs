@@ -44,36 +44,43 @@ namespace SiNet{
                     online = false;
                     OnConnectLost();
                 }
-                else if (!serverConnection.isConnected && !online)
+                else if (serverConnection.isConnected && !online)
                 {
-                    // try connecting
-                    Debug.LogWarning("[SiNet]try connect...");
+                    // first find connected
+                    // init
+                    Debug.Log("[SiNet] connect success, init...");
 
-                    yield return new WaitForSeconds(CONNECTION_CHECK_INTERVAL);
+                    var returnHandle = RPCStub.instance.Call(
+                        RPCStub.CallableFunction.getServerTime,
+                        new RPCVariable());
 
-                    if (serverConnection.isConnected)
+                    // the RPC message will not be sent automatically
+                    // because the network hasn't been inited, so we need to send there
+                    var sendMessages = MessageCollector.instance.ReadMessages();
+                    foreach(var m in sendMessages)
+                        serverConnection.Send(m);
+
+                    // wait when server time is ready
+                    while (true)
                     {
-                        Debug.Log("[SiNet] connect success, init...");
-
-                        var returnHandle =  RPCStub.instance.Call(
-                            RPCStub.CallableFunction.getServerTime,
-                            new RPCVariable());
-
-                        // wait when server time is ready
-                        while (true) {
-                            if (returnHandle.isReady) {
-                                ServerTime.InitServerTime(returnHandle.returnValue.GetFloat());
-                                break;
-                            }
-                            yield return null;
+                        if (returnHandle.isReady)
+                        {
+                            ServerTime.InitServerTime(returnHandle.returnValue.floatValues[0]);
+                            break;
                         }
-
-                        online = true;
-                        OnConnectSuccess();
+                     
+                        yield return null;
                     }
+
+                    online = true;
+                    OnConnectSuccess();            
                 }
 
-                yield return CONNECTION_CHECK_INTERVAL;
+                if (!online) {
+                    Debug.LogWarning("[SiNet] connecting...");
+                }
+
+                yield return new WaitForSeconds(CONNECTION_CHECK_INTERVAL);
             }
         }
 
@@ -146,7 +153,7 @@ namespace SiNet{
         }
 
         private void OnConnectSuccess() {
-            Debug.Log("connect success!");
+            Debug.Log("connect success at server time: " + ServerTime.current);
         }
 
         private void OnApplicationQuit()
