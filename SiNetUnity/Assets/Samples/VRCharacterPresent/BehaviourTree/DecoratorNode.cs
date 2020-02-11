@@ -6,7 +6,7 @@ namespace BehaviourTree {
     public abstract class DecoratorNode : Node{
         protected Node decorateTarget;
 
-        private void Start()
+        protected virtual void Start()
         {
             FindDecorateTargetInChildren();    
         }

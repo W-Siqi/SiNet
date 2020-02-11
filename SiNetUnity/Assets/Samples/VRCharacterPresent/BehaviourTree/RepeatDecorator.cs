@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace BehaviourTree
 {
-    public class RepeatDecorator : DecoratorNode
+    public class RepeatDecorator : LoopDecorator
     {
         [System.Serializable]
         public class RepeatConfig
