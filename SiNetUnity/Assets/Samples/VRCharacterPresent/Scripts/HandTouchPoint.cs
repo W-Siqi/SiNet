@@ -10,8 +10,8 @@ public class HandTouchPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IVBottle>()) {
-            var IVBottle = other.GetComponent<IVBottle>();
+        var IVBottle = other.GetComponent<IVBottle>();
+        if (IVBottle && !IVBottle.isOnGrab) {
             IVBottle.isOnGrab = true;
             IVBottle.transform.SetParent(transform);
             IVBottle.transform.localPosition = Vector3.zero;

@@ -2757,11 +2757,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyTransform: {fileID: 4580159423550009836}
+  attachedEntity: {fileID: 6523058502061616500}
   pickupTriggerCounter: {fileID: 1493603058782184512}
   isOverMovingSpeed: 0
   grabActionTrigger: 0
   animator: {fileID: 2752302292176275108}
   bodyVelocity: {x: 0, y: 0, z: 0}
+  grabIVBottleID: -1
+  handAnchorPoint: {fileID: 4656645116831100285}
 --- !u!114 &311667684962359111
 MonoBehaviour:
   m_ObjectHideFlags: 0

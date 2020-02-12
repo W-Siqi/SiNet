@@ -232,7 +232,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4717819202163116435}
-  - component: {fileID: 4717819202163116434}
+  - component: {fileID: 1059526285953030970}
   m_Layer: 0
   m_Name: RPC Stub
   m_TagString: Untagged
@@ -254,7 +254,7 @@ Transform:
   m_Father: {fileID: 4717819201360424384}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4717819202163116434
+--- !u!114 &1059526285953030970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -263,6 +263,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4717819202163116432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decfbd1df8379d34c8b9d090a9d6dc79, type: 3}
+  m_Script: {fileID: 11500000, guid: 9710d6ffec9434e688fd717b6b1ef54e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -52,10 +52,15 @@ public class VRCPDemoRPCFunctionTable : RPCFunctionTable
     private static void ProcessGrabIVBottleEvent(RPCVariable rpcVariable) {
         try {
             // decode variable
-            var grabberSUID = rpcVariable.floatValues[0];
-            var IVBottleID = rpcVariable.floatValues[1];
+            var grabberSUID = (int)rpcVariable.floatValues[0];
+            var IVBottleID = (int)rpcVariable.floatValues[1];
 
+            var targetBlackBoard = SyncVRNurseBlackboard.FindBlackBoard(grabberSUID);
+            var targetIVBottle = IVBottle.FindIVBottle(IVBottleID);
 
+            // set the blackboard values
+            targetBlackBoard.grabIVBottleID = targetIVBottle.id;
+            targetBlackBoard.grabActionTrigger = true;
         }
         catch (System.Exception e)
         {

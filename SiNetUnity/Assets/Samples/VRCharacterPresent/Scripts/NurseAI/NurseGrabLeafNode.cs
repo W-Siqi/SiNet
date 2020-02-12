@@ -24,6 +24,14 @@ public class NurseGrabLeafNode : LeafNode
                 break;
         }
 
+        // attached the bottle
+        var bottle = IVBottle.FindIVBottle(nurseBB.grabIVBottleID);
+        if (bottle && nurseBB.handAnchorPoint) {
+            bottle.isOnGrab = true;
+            bottle.transform.SetParent(transform);
+            bottle.transform.localPosition = Vector3.zero;
+        }
+
         if (nurseBB.hasAction)
             _state = State.fail;
         else

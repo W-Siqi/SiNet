@@ -1,5 +1,63 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1469183950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1469183953}
+  - component: {fileID: 1469183952}
+  - component: {fileID: 1469183951}
+  m_Layer: 0
+  m_Name: HandTouchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1469183953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469183950}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.165, z: 0}
+  m_LocalScale: {x: 1, y: 2.0177, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3748837066849065491}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1469183952
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469183950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1469183951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469183950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a031a90c7dfca4f749c620fe4663b368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachedEntity: {fileID: 5841163133333882507}
 --- !u!1 &57956660909527529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,7 +1471,7 @@ Transform:
   m_Children:
   - {fileID: 4841741587559841825}
   m_Father: {fileID: 3748837066849065491}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3748837066849158707
 GameObject:
@@ -1446,6 +1504,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1469183953}
   - {fileID: 3619421067424337724}
   - {fileID: 3193372811380497955}
   m_Father: {fileID: 2575879026828292044}
@@ -3150,7 +3209,7 @@ Transform:
   m_Children:
   - {fileID: 6808284622648169005}
   m_Father: {fileID: 3748837066849065491}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4397843960150607169
 MonoBehaviour:
@@ -3165,11 +3224,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodyTransform: {fileID: 3748837066849065491}
+  attachedEntity: {fileID: 5841163133333882507}
   pickupTriggerCounter: {fileID: 2248191045515218879}
   isOverMovingSpeed: 0
   grabActionTrigger: 0
   animator: {fileID: 3295317246614252891}
   bodyVelocity: {x: 0, y: 0, z: 0}
+  grabIVBottleID: -1
 --- !u!114 &1142280233893133496
 MonoBehaviour:
   m_ObjectHideFlags: 0

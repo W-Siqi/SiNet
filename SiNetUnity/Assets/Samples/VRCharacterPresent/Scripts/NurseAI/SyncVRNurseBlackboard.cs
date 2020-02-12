@@ -12,6 +12,8 @@ public class SyncVRNurseBlackboard : Blackboard
     [SerializeField]
     Transform bodyTransform;
     [SerializeField]
+    SyncEntity attachedEntity;
+    [SerializeField]
     SyncInt pickupTriggerCounter;
 
     public bool isOverMovingSpeed = false;
@@ -19,6 +21,7 @@ public class SyncVRNurseBlackboard : Blackboard
     public Animator animator;
     public Vector3 bodyVelocity = Vector3.zero;
     public int grabIVBottleID = -1;
+    public Transform handAnchorPoint;
 
     public bool hasAction {
         get {
@@ -62,5 +65,14 @@ public class SyncVRNurseBlackboard : Blackboard
             previousPickupTriggerCounter = pickupTriggerCounter.val;
             grabActionTrigger = true; 
         }
+    }
+
+    public static SyncVRNurseBlackboard FindBlackBoard(int attachedEntityID)
+    {
+        foreach(var bb in FindObjectsOfType<SyncVRNurseBlackboard>()) {
+            if (bb.attachedEntity && bb.attachedEntity.sceneUID == attachedEntityID)
+                return bb;
+        }
+        return null;
     }
 }
