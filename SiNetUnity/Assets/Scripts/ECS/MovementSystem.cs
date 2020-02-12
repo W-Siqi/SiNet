@@ -15,6 +15,7 @@ namespace SiNet {
         private class MovementEntity {
             public SyncEntity entity;
             public SyncTransform syncTransform;
+            public MovementDecorator decorator;
 
             private float lastUpdateTime = -1f;
             private Vector3 lastPos;
@@ -26,6 +27,7 @@ namespace SiNet {
             public MovementEntity(SyncEntity entity, SyncTransform transform) {
                 this.entity = entity;
                 this.syncTransform = transform;
+                this.decorator = entity.GetComponent<MovementDecorator>();
             }
 
             // TBD: now the way calculation position is a placeholder
@@ -33,14 +35,33 @@ namespace SiNet {
             public void UpdateMovement() {
                 if (!isValid)
                     return;
+                if (decorator && !decorator.applyMovementSystem)
+                    return;
 
+                // TBD: use lerp to fix the gap between two long sync state!
                 bool isTempDebug = true;
                 if (isTempDebug) {
-                    entity.transform.position = syncTransform.position;
-                    entity.transform.rotation = syncTransform.rotation;
+                    // apply position
+                    var newPosition = syncTransform.position;
+                    if (decorator && decorator.ignoreYPosition) {
+                        newPosition.y = 0;
+                    }
+                    entity.transform.position = newPosition;
+
+                    // apply rotation
+                    var newRotation = syncTransform.rotation;
+                    if (decorator && decorator.lockAtYRotation) {
+                        var newRotationForward = newRotation * Vector3.forward;
+                        newRotationForward.y = 0;
+                        newRotation = Quaternion.FromToRotation(Vector3.forward, newRotationForward);
+                    }
+                    entity.transform.rotation = newRotation;
+
                     return;
                 }
 
+
+                // deprecated lerp alogirthem, works not well. 
                 if (lastUpdateTime < 0)
                 {
                     InitAsFirstState();

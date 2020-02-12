@@ -9,6 +9,7 @@
     - message collector 
     - entity manager
 2. movement lerping system
+3. RPC (client -> server)
 3. roboast application layer 
 1. log system for analyze data receiving
 

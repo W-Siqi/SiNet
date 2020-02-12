@@ -732,6 +732,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: player select
       objectReference: {fileID: 0}
+    - target: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,
+        type: 3}
+      propertyPath: nursePlayerPrefab
+      value: 
+      objectReference: {fileID: 5112099141320676258, guid: 0864d53079754c0438f69a6a79c4981a,
+        type: 3}
+    - target: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,
+        type: 3}
+      propertyPath: patientPlayerPrefab
+      value: 
+      objectReference: {fileID: 7129318878200797952, guid: 1ddd270bd143e7045847b807e73c809a,
+        type: 3}
     - target: {fileID: 1608724520235912404, guid: 1ddd270bd143e7045847b807e73c809a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -787,18 +799,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: nursePlayerPrefab
-      value: 
-      objectReference: {fileID: 5112099141320676258, guid: 0864d53079754c0438f69a6a79c4981a,
-        type: 3}
-    - target: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: patientPlayerPrefab
-      value: 
-      objectReference: {fileID: 7129318878200797952, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
     - target: {fileID: 2025220279847666194, guid: 1ddd270bd143e7045847b807e73c809a,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1119,6 +1119,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4717819201477405751, guid: d1f7c9fef49a240e5b440d73850e8f8b,
+        type: 3}
+      propertyPath: entityTable.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 4580159423550107084, guid: 1074b91304aca9541b910b481df9e5f1,
+        type: 3}
     - target: {fileID: 4717819200603280100, guid: d1f7c9fef49a240e5b440d73850e8f8b,
         type: 3}
       propertyPath: config.syncFrames

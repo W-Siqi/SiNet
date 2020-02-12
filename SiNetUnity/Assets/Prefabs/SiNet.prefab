@@ -89,7 +89,7 @@ MonoBehaviour:
   config:
     hostIP: 127.0.0.1
     port: 8000
-    syncFrames: 60
+    syncFrames: 40
     maxWaitTime: 3
   online: 0
 --- !u!1 &4717819201360424385
@@ -175,7 +175,7 @@ MonoBehaviour:
     prefab: {fileID: 4959194483758218817, guid: 227cac3b61bb04cb1a58063668d2b2a6,
       type: 3}
   - id: 2
-    prefab: {fileID: 3113577972905401113, guid: c23c97b2d7317467488ce8abe2c413f7,
+    prefab: {fileID: 4580159423550107084, guid: 1074b91304aca9541b910b481df9e5f1,
       type: 3}
   remoteAuthorityGroup: []
   serverAuthorityGroup: []

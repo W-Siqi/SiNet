@@ -1644,6 +1644,7 @@ GameObject:
   - component: {fileID: 6523058502061616500}
   - component: {fileID: 3771170930196958151}
   - component: {fileID: 1493603058782184512}
+  - component: {fileID: 2635128941496829770}
   m_Layer: 0
   m_Name: Dummy Nurse
   m_TagString: Untagged
@@ -1717,6 +1718,21 @@ MonoBehaviour:
   timeStamp: 0
   innerID: -1
   val: 0
+--- !u!114 &2635128941496829770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4580159423550107084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b14391343a6403fa93a4946b80e8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applyMovementSystem: 1
+  ignoreYPosition: 1
+  lockAtYRotation: 1
 --- !u!1 &4807086797221522478
 GameObject:
   m_ObjectHideFlags: 0
