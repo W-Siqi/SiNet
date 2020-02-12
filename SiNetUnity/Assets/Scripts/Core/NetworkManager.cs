@@ -50,9 +50,7 @@ namespace SiNet{
                     // init
                     Debug.Log("[SiNet] connect success, init...");
 
-                    var returnHandle = RPCStub.instance.Call(
-                        RPCFunctionTable.GET_SERVER_TIME,
-                        new RPCVariable());
+                    var returnHandle = RPCFunctionTable.GetServerTime();
 
                     // the RPC message will not be sent automatically
                     // because the network hasn't been inited, so we need to send there

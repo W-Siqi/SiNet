@@ -18,6 +18,7 @@ public class SyncVRNurseBlackboard : Blackboard
     public bool grabActionTrigger = false;
     public Animator animator;
     public Vector3 bodyVelocity = Vector3.zero;
+    public int grabIVBottleID = -1;
 
     public bool hasAction {
         get {

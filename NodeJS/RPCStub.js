@@ -21,7 +21,7 @@ function processRemoteCall(session,rpcMsgBody){
     }
     else if(rpcMsgBody.signature.name == BOARDCAST_EVENT){
         let responseRPCMsgBody = new RPCMessageBody();
-        responseRPCMsgBody.isCaller = false;
+        responseRPCMsgBody.isCaller = true;
         responseRPCMsgBody.signature = rpcMsgBody.signature;
         responseRPCMsgBody.variable = rpcMsgBody.variable;
         

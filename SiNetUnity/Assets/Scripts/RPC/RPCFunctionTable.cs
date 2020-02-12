@@ -7,5 +7,9 @@ namespace SiNet {
     {
         public const string GET_SERVER_TIME = "GetServerTime";
         public const string BOARDCAST_EVENT = "BoardcastEvent";
+
+		public static RPCReturnHandle GetServerTime() {
+            return RPCStub.instance.Call(GET_SERVER_TIME, new RPCVariable());
+        }
     }
 }
