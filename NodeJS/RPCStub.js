@@ -2,6 +2,7 @@ const RPCMessageBody = require("./RPCMessageBody");
 const ServerTime = require("./ServerTime");
 
 const GET_SERVER_TIME = "GetServerTime";
+const BOARDCAST_EVENT = "BoardcastEvent";
 
 function processRemoteCall(session,rpcMsgBody){
     if(rpcMsgBody.signature.name == GET_SERVER_TIME){

@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace SiNet{
+    // To really use RPC, need to implement the rules of specific RPC function logic
+    // This RPC Framework only responsble for sending RPC message and reciving return value.
+    // An example is, in "SiNet::NetworkManager", it calls RPC fuction "GetServerTime" to init the local server time info.
+
+    // The default server code support two "built-in" RPC call
+    // GetServerTime(), return value is a float(server Time)
+    // BoardcastEvent(),  will boardcast the caller with same variable to every client and server.
     public class RPCStub : MonoBehaviour
     {
-        public enum CallableFunction {
-            getServerTime
-        }
-
-        public enum RecvableFunction
-        {
-            getServerTime,
-            callEvent
-        }
-
         public static RPCStub instance {
             get {
                 if (_instance)
@@ -42,9 +39,10 @@ namespace SiNet{
             registeredReturnHandles = new List<RPCReturnHandle>();
         }
 
-        public RPCReturnHandle Call(CallableFunction function, RPCVariable parameter) {
-            var signature = CreateSignaure(function);
-            var messageBody = new RPCMessageBody(signature,parameter, RPCMessageBody.Type.call);
+        public RPCReturnHandle Call(string functionName, RPCVariable parameter) {
+			var signature = new RPCSignature(functionName);
+
+			var messageBody = new RPCMessageBody(signature,parameter, RPCMessageBody.Type.call);
 
             var transmitableBody = new TransmitableRPCMessageBody();
             transmitableBody.InitFromOriginalObejct(messageBody);
@@ -66,12 +64,13 @@ namespace SiNet{
             }
         }
 
-        private void ProcessRemoteCall(RPCMessageBody message) {
+        protected virtual void ProcessRemoteCall(RPCMessageBody message) {
             throw new System.NotImplementedException();
         }
 
-        private void ProcessReturnValue(RPCMessageBody message) {
+        protected void ProcessReturnValue(RPCMessageBody message) {
             foreach (var handle in registeredReturnHandles) {
+                // find matched handle
                 if (handle.signature == message.rpcSignature) {
                     handle.isReady = true;
                     handle.returnValue = message.rpcVariable;
@@ -80,20 +79,6 @@ namespace SiNet{
                     break;
                 }
             }
-        }
-
-        private RPCSignature CreateSignaure(CallableFunction function) {
-            var name = "";
-            switch (function) {
-                case CallableFunction.getServerTime:
-                    name = "GetServerTime";
-                    break;
-                default:
-                    throw new System.Exception("undefined RPC signature");
-                    break;
-            }
-
-            return new RPCSignature(name);
         }
     }
 }

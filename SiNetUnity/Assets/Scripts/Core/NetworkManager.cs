@@ -51,7 +51,7 @@ namespace SiNet{
                     Debug.Log("[SiNet] connect success, init...");
 
                     var returnHandle = RPCStub.instance.Call(
-                        RPCStub.CallableFunction.getServerTime,
+                        RPCFunctionTable.GET_SERVER_TIME,
                         new RPCVariable());
 
                     // the RPC message will not be sent automatically
