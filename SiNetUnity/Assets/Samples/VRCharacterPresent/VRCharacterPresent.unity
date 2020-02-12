@@ -1064,11 +1064,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SiNet
       objectReference: {fileID: 0}
-    - target: {fileID: 4717819201360424385, guid: d1f7c9fef49a240e5b440d73850e8f8b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4717819201360424384, guid: d1f7c9fef49a240e5b440d73850e8f8b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1124,17 +1119,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717819201477405751, guid: d1f7c9fef49a240e5b440d73850e8f8b,
+    - target: {fileID: 4717819200603280100, guid: d1f7c9fef49a240e5b440d73850e8f8b,
         type: 3}
-      propertyPath: entityTable.Array.data[0].prefab
-      value: 
-      objectReference: {fileID: 4959194483758218817, guid: 227cac3b61bb04cb1a58063668d2b2a6,
-        type: 3}
-    - target: {fileID: 4717819201477405751, guid: d1f7c9fef49a240e5b440d73850e8f8b,
-        type: 3}
-      propertyPath: entityTable.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 3113577972905401113, guid: c23c97b2d7317467488ce8abe2c413f7,
-        type: 3}
+      propertyPath: config.syncFrames
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1f7c9fef49a240e5b440d73850e8f8b, type: 3}

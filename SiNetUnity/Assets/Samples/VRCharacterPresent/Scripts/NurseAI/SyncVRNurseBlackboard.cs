@@ -7,6 +7,7 @@ using BehaviourTree;
 public class SyncVRNurseBlackboard : Blackboard
 {
     const float MIN_MOVE_SPEED = 0.3f;
+    const float VELOCITY_MAX_SUSTAIN_INTERVAL = 0.5f;
 
     [SerializeField]
     Transform bodyTransform;
@@ -26,6 +27,7 @@ public class SyncVRNurseBlackboard : Blackboard
 
     private int previousPickupTriggerCounter = 0;
     private Vector3 lastPos;
+    private float lastVelocityUpdateTime = -1;
 
     private void Start()
     {
@@ -36,8 +38,22 @@ public class SyncVRNurseBlackboard : Blackboard
     {
         // update velocity
         var curPos = bodyTransform.position;
-        bodyVelocity = (curPos - lastPos) / Time.deltaTime;
-        lastPos = curPos;
+        var curVelocity = (curPos - lastPos) / (Time.time - lastVelocityUpdateTime);
+        if (curVelocity.magnitude > MIN_MOVE_SPEED)
+        {
+            lastPos = curPos;
+            bodyVelocity = curVelocity;
+            lastVelocityUpdateTime = Time.time;
+        }
+        else {
+            // only update when time is too long
+            if (Time.time > lastVelocityUpdateTime + VELOCITY_MAX_SUSTAIN_INTERVAL)
+            {
+                lastPos = curPos;
+                bodyVelocity = curVelocity;
+                lastVelocityUpdateTime = Time.time;
+            }
+        }
 
         isOverMovingSpeed = bodyVelocity.magnitude > MIN_MOVE_SPEED;
 

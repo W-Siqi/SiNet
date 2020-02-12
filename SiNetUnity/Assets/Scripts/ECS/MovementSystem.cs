@@ -34,6 +34,13 @@ namespace SiNet {
                 if (!isValid)
                     return;
 
+                bool isTempDebug = true;
+                if (isTempDebug) {
+                    entity.transform.position = syncTransform.position;
+                    entity.transform.rotation = syncTransform.rotation;
+                    return;
+                }
+
                 if (lastUpdateTime < 0)
                 {
                     InitAsFirstState();

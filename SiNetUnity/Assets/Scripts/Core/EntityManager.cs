@@ -89,10 +89,12 @@ namespace SiNet {
         private void RefreshEntityGroup() {
             foreach (var entity in FindObjectsOfType<SyncEntity>())
             {
-                if (entity.authorityType == SyncEntity.AuthorityType.local)
+                if (entity.authorityType == SyncEntity.AuthorityType.local 
+                    && localAuthorityGroup.IndexOf(entity) < 0)
                     localAuthorityGroup.Add(entity);
-                else if (entity.authorityType == SyncEntity.AuthorityType.remote)
-                    localAuthorityGroup.Add(entity);
+                else if (entity.authorityType == SyncEntity.AuthorityType.remote
+                    && localAuthorityGroup.IndexOf(entity) < 0)
+                    remoteAuthorityGroup.Add(entity);
             }
         }
     }
