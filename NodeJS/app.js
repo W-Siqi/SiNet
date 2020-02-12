@@ -22,7 +22,7 @@ var server = net.createServer(function(socket){
     console.log("one client connected");
 
     socket.on('data',function(data){
-        console.log("buffer size: "+ socket.bufferSize +"the size of data is"+socket.bytesRead);
+        // console.log("buffer size: "+ socket.bufferSize +"the size of data is"+socket.bytesRead);
 
         let packgeStrs = readPackages(data.toString());
         packgeStrs.forEach(packageStr => {

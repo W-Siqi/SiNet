@@ -1,4 +1,5 @@
 const Message = require("./Message");
+const ServerLogger = require("./ServerLogger");
 
 const MAX_WAIT_TIME = 6000;
 class SyncSession{
@@ -29,8 +30,9 @@ class SyncSession{
         for(let i in this.entities){
             let enti = this.entities[i];
             if(enti.lastestSnapshot.sceneUID == lastestSnapshot.sceneUID){
-                console.log("update- sceneUID: " + lastestSnapshot.sceneUID);
+                ServerLogger.logSyncMessage("update- sceneUID: " + lastestSnapshot.sceneUID);
                 enti.lastestSnapshot = lastestSnapshot;
+                enti.lastUpdateTime = Date.now();
                 return true;
             }
         }
@@ -38,7 +40,7 @@ class SyncSession{
     }
 
     addEntity(initSnapshot){
-        console.log("new- sceneUID: " + initSnapshot.sceneUID);
+        console.log("new- sceneUID: " + initSnapshot.sceneUID+ " entity count: "+this.entities.length);
         let newEntity = new Entity(initSnapshot);
         this.entities.push(newEntity);
     }
@@ -59,12 +61,14 @@ class SyncSession{
             for(let i = 0;i<this.entities.length;i++){
                 let entity = this.entities[i];
                 if(now -  entity.lastUpdateTime>MAX_WAIT_TIME){
-                    console.log("[Entity status]- time out- sceneUID: "+entity.lastestSnapshot.sceneUID);
+                    console.log("time out- sceneUID: "+entity.lastestSnapshot.sceneUID);
+                    
                     this.entities.splice(i,1);
                     i--;
                 }
                 else{
-                    console.log("[Entity status]- encoded - sceneUID: "+entity.lastestSnapshot.sceneUID);
+                    ServerLogger.logSyncMessage("encoded - sceneUID: "+entity.lastestSnapshot.sceneUID);
+                    
                     let message = new Message('sync',JSON.stringify(entity.lastestSnapshot));
                     syncMessages.push(message);
                 }
@@ -80,7 +84,7 @@ class SyncSession{
                 else{
                     syncMessages.forEach(sMsg => {
                         client.socket.write(sMsg.encodeToString(),function(){
-                          console.log("[message to client]");
+                          // console.log("[message to client]");
                         })   
                     })
                 }

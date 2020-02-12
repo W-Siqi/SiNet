@@ -1,4 +1,5 @@
 const RPCStub = require("./RPCStub");
+const ServerLogger = require("./ServerLogger");
 
 function processMessage(syncSession, message){
     if(message.type == "sync"){
@@ -8,7 +9,7 @@ function processMessage(syncSession, message){
         processRPCMessage(syncSession,message);
     }
     else{
-        console.log("process fail- type: "+message.type);
+        ServerLogger.logError("process fail- type: "+message.type);
     }
 }
 
@@ -20,11 +21,11 @@ function processSyncMessage(syncSession,message){
     try {
         var syncGOSnapshot = JSON.parse(message.body);
     } catch (e) {
-        console.log("[Transmit error] - bad body");
+        ServerLogger.logError("[Transmit error] - bad body "+message.type);
         return;
     } 
 
-    console.log("[processing sync message] - sceneUID: "+syncGOSnapshot.sceneUID);
+    ServerLogger.logSyncMessage("[processing sync message] - sceneUID: "+syncGOSnapshot.sceneUID);
 
     let isregisted = syncSession.updateEntity(syncGOSnapshot);
     if(!isregisted){
