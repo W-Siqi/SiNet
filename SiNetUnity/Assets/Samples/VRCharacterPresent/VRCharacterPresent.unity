@@ -704,18 +704,6 @@ Transform:
   m_Father: {fileID: 2020226116}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 19.415, y: -164.12502, z: -147.102}
---- !u!114 &929526837 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1059339294}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f08ec7c3bd72b4f48be547f6274d9130, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1000509746
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,18 +845,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player select
       objectReference: {fileID: 0}
-    - target: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: nursePlayerPrefab
-      value: 
-      objectReference: {fileID: 5112099141320676258, guid: 0864d53079754c0438f69a6a79c4981a,
-        type: 3}
-    - target: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: patientPlayerPrefab
-      value: 
-      objectReference: {fileID: 7129318878200797952, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
     - target: {fileID: 1608724520235912404, guid: 1ddd270bd143e7045847b807e73c809a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -928,36 +904,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025220279592174163, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 929526837}
-    - target: {fileID: 2025220279592174163, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectNurse
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025220280131264507, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 929526837}
-    - target: {fileID: 2025220280131264507, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectPatient
-      objectReference: {fileID: 0}
-    - target: {fileID: 6282285515634842313, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 929526837}
-    - target: {fileID: 6282285515634842313, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectObserver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ddd270bd143e7045847b807e73c809a, type: 3}
@@ -1243,6 +1189,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717819200603280100, guid: d1f7c9fef49a240e5b440d73850e8f8b,
+        type: 3}
+      propertyPath: config.hostIP
+      value: 128.2.239.145
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1f7c9fef49a240e5b440d73850e8f8b, type: 3}

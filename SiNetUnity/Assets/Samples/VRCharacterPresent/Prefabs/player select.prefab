@@ -261,8 +261,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnSelectNurse
+      - m_Target: {fileID: 7161661005088374474}
+        m_MethodName: SelectNurse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -570,8 +570,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnSelectPatient
+      - m_Target: {fileID: 7161661005088374474}
+        m_MethodName: SelectPatient
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -704,8 +704,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UIMenu: {fileID: 2025220279847666199}
-  nursePlayerPrefab: {fileID: 0}
-  patientPlayerPrefab: {fileID: 0}
+  nursePlayerPrefab: {fileID: 5112099141320676258, guid: 0864d53079754c0438f69a6a79c4981a,
+    type: 3}
+  patientPlayerPrefab: {fileID: 5112099141320676258, guid: 0864d53079754c0438f69a6a79c4981a,
+    type: 3}
   observerPrefab: {fileID: 57956660909527529, guid: a411fe479a06bf346bfa452a4ee24c09,
     type: 3}
 --- !u!1 &9107385485208216620
@@ -826,8 +828,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: OnSelectPatient
+      - m_Target: {fileID: 7161661005088374474}
+        m_MethodName: SelectObserver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
