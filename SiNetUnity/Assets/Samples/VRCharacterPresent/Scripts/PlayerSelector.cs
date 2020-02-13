@@ -16,8 +16,10 @@ public class PlayerSelector : MonoBehaviour
 
     public void SelectPatient()
     {
-        Instantiate(patientPlayerPrefab);
+        var patientGO = Instantiate(patientPlayerPrefab);
         UIMenu.SetActive(false);
+        var initPos = AnchorManager.instance.patientPlayerInit.transform.position;
+        patientGO.transform.position = initPos;
     }
 
     public void SelectObserver()
