@@ -11,9 +11,6 @@ public class NurseOpenWindowLeafNode : LeafNode
 
         var nurseBB = blackboard as SyncVRNurseBlackboard;
 
-        // lock the movement sync
-        nurseBB.movementDecorator.applyMovementSystem = false;
-
         // set animation
         nurseBB.animator.SetTrigger("openWindow");
         nurseBB.openWindowTrigger = false;
@@ -26,9 +23,6 @@ public class NurseOpenWindowLeafNode : LeafNode
             if (nurseBB.hasAction)
                 break;
         }
-
-        // recover movement sync
-        nurseBB.movementDecorator.applyMovementSystem = true;
 
         if (nurseBB.hasAction)
             _state = State.fail;
