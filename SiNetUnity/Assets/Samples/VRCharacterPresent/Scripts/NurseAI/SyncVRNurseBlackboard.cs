@@ -14,22 +14,27 @@ public class SyncVRNurseBlackboard : Blackboard
     [SerializeField]
     SyncEntity attachedEntity;
     [SerializeField]
-    SyncInt pickupTriggerCounter;
+    SyncInt openWindowTriggerCounter;
+
+    public Animator animator;
+    public MovementDecorator movementDecorator;
+    public Transform handAnchorPoint;
 
     public bool isOverMovingSpeed = false;
     public bool grabActionTrigger = false;
-    public Animator animator;
+    public bool openWindowTrigger = false;
+
     public Vector3 bodyVelocity = Vector3.zero;
     public int grabIVBottleID = -1;
-    public Transform handAnchorPoint;
+
 
     public bool hasAction {
         get {
-            return grabActionTrigger;
+            return grabActionTrigger || openWindowTrigger;
         }
     }
 
-    private int previousPickupTriggerCounter = 0;
+    private int previousOpenWindowTriggerCounter = 0;
     private Vector3 lastPos;
     private float lastVelocityUpdateTime = -1;
 
@@ -59,11 +64,13 @@ public class SyncVRNurseBlackboard : Blackboard
             }
         }
 
+        // update moving status
         isOverMovingSpeed = bodyVelocity.magnitude > MIN_MOVE_SPEED;
 
-        if (pickupTriggerCounter.val != previousPickupTriggerCounter) {
-            previousPickupTriggerCounter = pickupTriggerCounter.val;
-            grabActionTrigger = true; 
+        // open window trigger
+        if (openWindowTriggerCounter.val != previousOpenWindowTriggerCounter) {
+            previousOpenWindowTriggerCounter = openWindowTriggerCounter.val;
+            openWindowTrigger = true; 
         }
     }
 

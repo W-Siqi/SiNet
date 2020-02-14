@@ -14,4 +14,5 @@ public class AnchorManager : MonoBehaviour
 
     public AnchorPoint dummyPatient;
     public AnchorPoint patientPlayerInit;
+    public AnchorPoint nursePlayerStart;
 }

@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachedEntity: {fileID: 5112099140545659548}
+  openWindowTriggerCounter: {fileID: 5112099140545659550}
 --- !u!1 &5112099139368088350
 GameObject:
   m_ObjectHideFlags: 0

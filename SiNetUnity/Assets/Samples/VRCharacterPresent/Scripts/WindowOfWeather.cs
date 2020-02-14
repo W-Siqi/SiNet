@@ -36,7 +36,6 @@ public class WindowOfWeather : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        OpenToSunny();
     }
 
     public void OpenToRain() {

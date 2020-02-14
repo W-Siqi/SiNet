@@ -73,6 +73,7 @@ Transform:
   m_Children:
   - {fileID: 497702698}
   - {fileID: 5190828098379572873}
+  - {fileID: 5328436596598164590}
   m_Father: {fileID: 8034920308088024866}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -90,6 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dummyPatient: {fileID: 497702699}
   patientPlayerInit: {fileID: 4418863853525375821}
+  nursePlayerStart: {fileID: 3548329505623464605}
 --- !u!1 &2541158602215748527
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +130,49 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2541158602215748527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d6eb1b301d04e4fa4a5e5305e87173, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2822727162560510112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5328436596598164590}
+  - component: {fileID: 3548329505623464605}
+  m_Layer: 0
+  m_Name: 'nurse player start '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5328436596598164590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822727162560510112}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.056, y: 1.355, z: -1.425}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 778110497}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3548329505623464605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822727162560510112}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83d6eb1b301d04e4fa4a5e5305e87173, type: 3}
@@ -210,15 +255,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d23e4ce5c7e7406495213b22713094a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventProcessor:
-    weatherWindow: {fileID: 0}
   selectedPespective: 2
-  perspectiveCharacter: {fileID: 0}
-  patientCharacterPrefab: {fileID: 1740449062521999121, guid: eba359497ea704ecf98c3aa67edcaf77,
-    type: 3}
-  nurseCharacterPrefab: {fileID: 1520655570437901469, guid: 1ef24aee3bb6b4b19b9722e8bc8f90f7,
-    type: 3}
-  nurseUI: {fileID: 0}
+  resourceTable:
+    windowOfWeather: {fileID: 0}
 --- !u!1 &9040249333571860155
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,11 +589,6 @@ PrefabInstance:
     - target: {fileID: 1608724520235912404, guid: 1ddd270bd143e7045847b807e73c809a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2025220279847666194, guid: 1ddd270bd143e7045847b807e73c809a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7161661005088374474, guid: 1ddd270bd143e7045847b807e73c809a,

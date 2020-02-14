@@ -7,7 +7,7 @@ using SiNet;
 public class HandTouchPoint : MonoBehaviour
 {
     public SyncEntity attachedEntity;
-
+    public SyncInt openWindowTriggerCounter;
     private void OnTriggerEnter(Collider other)
     {
         var bottle = other.GetComponent<IVBottle>();
@@ -35,6 +35,7 @@ public class HandTouchPoint : MonoBehaviour
     private void OnTouchWindowOfWeather(WindowOfWeather window) {
         if (!window.isOpen) {
             VRCPDemoRPCFunctionTable.BoardcastOpenWindowEvent();
+            openWindowTriggerCounter.val++;
         }
     }
 }

@@ -239,8 +239,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191835953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.235, y: 1.11, z: 0.4951745}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.364, y: 1.833, z: -1.782}
+  m_LocalScale: {x: 0.13884172, y: 0.1817325, z: 0.14446141}
   m_Children: []
   m_Father: {fileID: 1122681605}
   m_RootOrder: 0
@@ -727,6 +727,8 @@ GameObject:
   - component: {fileID: 1298255548}
   - component: {fileID: 1298255550}
   - component: {fileID: 1298255549}
+  - component: {fileID: 1298255551}
+  - component: {fileID: 1298255552}
   m_Layer: 0
   m_Name: Window (1)
   m_TagString: Untagged
@@ -871,6 +873,35 @@ MonoBehaviour:
   sunlightColor: {r: 1, g: 0.92602664, b: 0.5613208, a: 1}
   sunlightMaxIntensity: 1.8
   rainlightColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
+--- !u!65 &1298255551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298255547}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.180606, y: 2.084807, z: 1.0533218}
+  m_Center: {x: -0.14693749, y: 1.6400001, z: 2.9087396}
+--- !u!54 &1298255552
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298255547}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1321301087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1450,11 +1481,26 @@ PrefabInstance:
         type: 3}
       propertyPath: resourceTable.windowOfWeather
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1298255550}
     - target: {fileID: 7020669550594708080, guid: 8a5b60adcc5cbf74aba3da60e8894db6,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328436596598164590, guid: 8a5b60adcc5cbf74aba3da60e8894db6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.996
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328436596598164590, guid: 8a5b60adcc5cbf74aba3da60e8894db6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.168
+      objectReference: {fileID: 0}
+    - target: {fileID: 5328436596598164590, guid: 8a5b60adcc5cbf74aba3da60e8894db6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.968
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5b60adcc5cbf74aba3da60e8894db6, type: 3}
