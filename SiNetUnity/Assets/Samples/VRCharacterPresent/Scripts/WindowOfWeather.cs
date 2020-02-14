@@ -36,7 +36,7 @@ public class WindowOfWeather : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        OpenToSunny();
+        OpenToRain();
     }
 
     public void OpenToRain() {
@@ -52,7 +52,7 @@ public class WindowOfWeather : MonoBehaviour
         skyboxRenderer.sharedMaterial = rainSkyboxMat;
 
         // set rain
-        rainEffect.transform.localPosition = Vector3.zero;
+        rainEffect.SetActive(true);
 
         // set lighting
         lightSource.color = rainlightColor;
