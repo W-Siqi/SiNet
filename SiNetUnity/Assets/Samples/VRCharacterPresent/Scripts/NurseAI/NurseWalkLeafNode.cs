@@ -14,12 +14,12 @@ public class NurseWalkLeafNode : LeafNode
         // set animation
         nurseBB.animator.SetTrigger("walk");
 
-        // wait till another antion break this one
         while (!IsWalkBreak(nurseBB))
         {
             yield return null;
         }
 
+        nurseBB.animator.SetTrigger("idle");
         if (IsWalkBreak(nurseBB))
             _state = State.fail;
         else
