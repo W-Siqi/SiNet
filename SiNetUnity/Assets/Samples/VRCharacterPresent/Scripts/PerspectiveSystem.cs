@@ -9,18 +9,18 @@ public class PerspectiveSystem : MonoBehaviour
         patient,nurse,none
     }
 
-    public enum Event
+    public enum PerspectiveEvent
     {
         openWindow
     }
 
-    public PerspectiveEventProcessor eventProcessor;
+    [System.Serializable]
+    public class ResourceTable{
+        public WindowOfWeather windowOfWeather;
+    }
 
     public PerspectiveType selectedPespective = PerspectiveType.none;
-    public GameObject perspectiveCharacter=null;
-    public GameObject patientCharacterPrefab;
-    public GameObject nurseCharacterPrefab;
-    public GameObject nurseUI;
+    public ResourceTable resourceTable;
 
     public static PerspectiveSystem _instance = null;
 
@@ -47,36 +47,34 @@ public class PerspectiveSystem : MonoBehaviour
     }
 
     public void InitPerspective(PerspectiveType type) {
-        if (perspectiveCharacter) {
-            DestroyImmediate(perspectiveCharacter);
+        if (selectedPespective == PerspectiveType.none)
+        {
+            selectedPespective = type;
         }
+        else {
+            Debug.LogError("try to change perspective in an unproper case");
+        }
+    }
 
-        switch (type) {
-            case PerspectiveType.nurse:
-                perspectiveCharacter = Instantiate(nurseCharacterPrefab);
-                StartCoroutine(ShowNurseUIAfter(5f));
-                break;
-            case PerspectiveType.patient:
-                perspectiveCharacter = Instantiate(patientCharacterPrefab);
-                SubtitlePlayer.instance.PlaySubtitle(0, 3f);
+    public void ExecutePerspectiveEvent(PerspectiveEvent perspectiveEvent) {
+        switch (perspectiveEvent)
+        {
+            case PerspectiveSystem.PerspectiveEvent.openWindow:
+                OnWindowOpened();
                 break;
             default:
-                Debug.LogWarning("may has bug! because the type doesn't has prefab");
+                Debug.LogError("undeclared event type");
                 break;
         }
-
-        selectedPespective = type;
-
-        ViewCam.instance.OpenCam();
-        ViewCam.instance.focusPoint = perspectiveCharacter.transform;
     }
 
-    public void TriggerPespectiveEvent(Event perspectiveEvent) {
-        eventProcessor.ProcessEvent(perspectiveEvent);
+    private void OnWindowOpened() {
+        if (selectedPespective == PerspectiveType.nurse)
+        {
+            resourceTable.windowOfWeather.OpenToSunny();
+        }
+        else {
+            resourceTable.windowOfWeather.OpenToRain();
+        }
     }
-
-    private IEnumerator ShowNurseUIAfter(float seconds) {
-        yield return new WaitForSeconds(seconds);
-        nurseUI.SetActive(true);
-    } 
 }

@@ -10,7 +10,7 @@ namespace SiNet {
             Debug.Log("RPC receive: " + signature.name);
             if(signature.name == "openw")
             {
-                PerspectiveSystem.instance.TriggerPespectiveEvent(PerspectiveSystem.Event.openWindow);
+                ;
             }
         }
     }

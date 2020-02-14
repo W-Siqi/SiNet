@@ -10,12 +10,31 @@ public class HandTouchPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var IVBottle = other.GetComponent<IVBottle>();
-        if (IVBottle && !IVBottle.isOnGrab) {
-            IVBottle.isOnGrab = true;
-            IVBottle.transform.SetParent(transform);
-            IVBottle.transform.localPosition = Vector3.zero;
-            VRCPDemoRPCFunctionTable.BoardcastGrabIVEvent(attachedEntity.sceneUID,IVBottle.id);
+        var bottle = other.GetComponent<IVBottle>();
+        if (bottle) {
+            OnTouchIVBottle(bottle);
+            return;
+        }
+
+        var window = other.GetComponent<WindowOfWeather>();
+        if (window) {
+            OnTouchWindowOfWeather(window);
+            return;
+        }
+    }
+
+    private void OnTouchIVBottle(IVBottle bottle) {
+        if (!bottle.isOnGrab) {
+            bottle.isOnGrab = true;
+            bottle.transform.SetParent(transform);
+            bottle.transform.localPosition = Vector3.zero;
+            VRCPDemoRPCFunctionTable.BoardcastGrabIVEvent(attachedEntity.sceneUID, bottle.id);
+        }
+    }
+
+    private void OnTouchWindowOfWeather(WindowOfWeather window) {
+        if (!window.isOpen) {
+            VRCPDemoRPCFunctionTable.BoardcastOpenWindowEvent();
         }
     }
 }
